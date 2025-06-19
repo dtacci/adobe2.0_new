@@ -324,6 +324,16 @@ body {
   color: var(--storybook-text);
   margin-bottom: 8px;
   line-height: 1.2;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.component-title .adobe-logo {
+  width: 40px;
+  height: 40px;
+  color: #fa0f00;
+  flex-shrink: 0;
 }
 
 .component-description {

@@ -1,10 +1,20 @@
 import React from 'react';
 
+// Adobe Logo Component
+const AdobeLogo = () => (
+  <svg className="adobe-logo" viewBox="0 0 24 24" fill="currentColor">
+    <path d="M13.966 22.624l-1.69-4.281H8.122l3.892-9.144 5.662 13.425zM8.884 1.376H0v21.248zm15.116 0h-8.884L24 22.624z"/>
+  </svg>
+);
+
 const HomePage = () => {
   return (
     <div className="component-view">
       <div className="component-header">
-        <h1 className="component-title">Adobe Spectrum Design System</h1>
+        <h1 className="component-title">
+          <AdobeLogo />
+          Adobe Spectrum Design System
+        </h1>
         <p className="component-description">
           A design system that provides components and tools to help product teams work more efficiently, 
           and to make Adobe's applications more cohesive.
