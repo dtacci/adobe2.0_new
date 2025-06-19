@@ -107,7 +107,7 @@ body {
 
 .search-container {
   margin-left: 20px;
-  display: none; /* Hide search bar */
+  display: block; /* Show search bar */
 }
 
 .search-input {
@@ -144,7 +144,7 @@ body {
 }
 
 .control-group.avatar-control {
-  display: none; /* Hide avatar control group */
+  display: flex; /* Show avatar control group */
 }
 
 .control-label {
@@ -510,6 +510,11 @@ body {
   /* Hide theme and scale controls on mobile, but keep avatar */
   .header-controls .control-group:not(.avatar-control) {
     display: none;
+  }
+  
+  /* Ensure avatar control shows on mobile */
+  .header-controls .control-group.avatar-control {
+    display: flex;
   }
 }
 
