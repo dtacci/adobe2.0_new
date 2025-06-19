@@ -179,20 +179,12 @@ function App() {
             
             <div className="control-group avatar-control">
               <span className="control-label">User:</span>
-              <div style={{ 
-                width: '32px', 
-                height: '32px', 
-                borderRadius: '50%', 
-                backgroundColor: 'red', 
-                display: 'flex', 
-                alignItems: 'center', 
-                justifyContent: 'center', 
-                color: 'white', 
-                fontWeight: 'bold',
-                fontSize: '12px'
-              }}>
-                DT
-              </div>
+              <Avatar 
+                initials="DT"
+                size="medium"
+                alt="User Avatar"
+                className="header-avatar"
+              />
             </div>
           </div>
         </header>
