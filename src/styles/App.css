@@ -380,7 +380,8 @@ body {
   font-size: 12px;
   font-weight: 600;
   color: var(--storybook-text);
-  margin-bottom: 6px;
+  vertical-align: middle;
+  padding-top: 6px;
 }
 
 .control-input {
