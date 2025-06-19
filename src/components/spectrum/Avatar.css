@@ -1,0 +1,141 @@
+.spectrum-Avatar {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background-color: var(--spectrum-avatar-background-color, var(--spectrum-global-color-gray-200));
+  color: var(--spectrum-avatar-text-color, var(--spectrum-global-color-gray-700));
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+[data-theme="dark"] .spectrum-Avatar {
+  background-color: var(--spectrum-global-color-gray-600);
+  color: var(--spectrum-global-color-gray-100);
+}
+
+.spectrum-Avatar-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: inherit;
+}
+
+.spectrum-Avatar-initials {
+  font-family: var(--spectrum-alias-body-text-font-family);
+  font-weight: var(--spectrum-global-font-weight-bold);
+  text-align: center;
+  line-height: 1;
+  user-select: none;
+}
+
+/* Size variants */
+.spectrum-Avatar--sizeSmall {
+  width: var(--spectrum-avatar-size-small, 24px);
+  height: var(--spectrum-avatar-size-small, 24px);
+}
+
+.spectrum-Avatar--sizeSmall .spectrum-Avatar-initials {
+  font-size: var(--spectrum-avatar-text-size-small, 10px);
+}
+
+.spectrum-Avatar--sizeMedium {
+  width: var(--spectrum-avatar-size-medium, 32px);
+  height: var(--spectrum-avatar-size-medium, 32px);
+}
+
+.spectrum-Avatar--sizeMedium .spectrum-Avatar-initials {
+  font-size: var(--spectrum-avatar-text-size-medium, 12px);
+}
+
+.spectrum-Avatar--sizeLarge {
+  width: var(--spectrum-avatar-size-large, 40px);
+  height: var(--spectrum-avatar-size-large, 40px);
+}
+
+.spectrum-Avatar--sizeLarge .spectrum-Avatar-initials {
+  font-size: var(--spectrum-avatar-text-size-large, 14px);
+}
+
+.spectrum-Avatar--sizeXLarge {
+  width: var(--spectrum-avatar-size-xlarge, 48px);
+  height: var(--spectrum-avatar-size-xlarge, 48px);
+}
+
+.spectrum-Avatar--sizeXLarge .spectrum-Avatar-initials {
+  font-size: var(--spectrum-avatar-text-size-xlarge, 16px);
+}
+
+.spectrum-Avatar--sizeXXLarge {
+  width: var(--spectrum-avatar-size-xxlarge, 64px);
+  height: var(--spectrum-avatar-size-xxlarge, 64px);
+}
+
+.spectrum-Avatar--sizeXXLarge .spectrum-Avatar-initials {
+  font-size: var(--spectrum-avatar-text-size-xxlarge, 20px);
+}
+
+/* Disabled state */
+.spectrum-Avatar.is-disabled {
+  opacity: var(--spectrum-avatar-opacity-disabled, 0.4);
+  cursor: default;
+}
+
+/* Hover state for interactive avatars */
+.spectrum-Avatar:not(.is-disabled):hover {
+  transform: scale(1.05);
+  transition: transform var(--spectrum-global-animation-duration-100) ease-in-out;
+}
+
+/* Focus state */
+.spectrum-Avatar:focus {
+  outline: var(--spectrum-alias-focus-ring-size) solid var(--spectrum-alias-focus-ring-color);
+  outline-offset: var(--spectrum-alias-focus-ring-gap);
+}
+
+/* Scale adjustments */
+[data-scale="large"] .spectrum-Avatar--sizeSmall {
+  width: 28px;
+  height: 28px;
+}
+
+[data-scale="large"] .spectrum-Avatar--sizeSmall .spectrum-Avatar-initials {
+  font-size: 11px;
+}
+
+[data-scale="large"] .spectrum-Avatar--sizeMedium {
+  width: 36px;
+  height: 36px;
+}
+
+[data-scale="large"] .spectrum-Avatar--sizeMedium .spectrum-Avatar-initials {
+  font-size: 13px;
+}
+
+[data-scale="large"] .spectrum-Avatar--sizeLarge {
+  width: 44px;
+  height: 44px;
+}
+
+[data-scale="large"] .spectrum-Avatar--sizeLarge .spectrum-Avatar-initials {
+  font-size: 15px;
+}
+
+[data-scale="large"] .spectrum-Avatar--sizeXLarge {
+  width: 52px;
+  height: 52px;
+}
+
+[data-scale="large"] .spectrum-Avatar--sizeXLarge .spectrum-Avatar-initials {
+  font-size: 17px;
+}
+
+[data-scale="large"] .spectrum-Avatar--sizeXXLarge {
+  width: 68px;
+  height: 68px;
+}
+
+[data-scale="large"] .spectrum-Avatar--sizeXXLarge .spectrum-Avatar-initials {
+  font-size: 21px;
+} 

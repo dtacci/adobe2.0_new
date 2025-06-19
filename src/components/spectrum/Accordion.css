@@ -1,0 +1,144 @@
+.spectrum-Accordion {
+  border: var(--spectrum-accordion-border-size, 1px) solid var(--spectrum-global-color-gray-300);
+  border-radius: var(--spectrum-accordion-border-radius, var(--spectrum-global-dimension-size-50));
+  background-color: var(--spectrum-global-color-gray-50);
+}
+
+[data-theme="dark"] .spectrum-Accordion {
+  border-color: var(--spectrum-global-color-gray-600);
+  background-color: var(--spectrum-global-color-gray-100);
+}
+
+.spectrum-Accordion-item {
+  border-bottom: var(--spectrum-accordion-item-border-size, 1px) solid var(--spectrum-global-color-gray-200);
+}
+
+[data-theme="dark"] .spectrum-Accordion-item {
+  border-bottom-color: var(--spectrum-global-color-gray-500);
+}
+
+.spectrum-Accordion-item:last-child {
+  border-bottom: none;
+}
+
+.spectrum-Accordion-itemHeader {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: var(--spectrum-global-dimension-size-150) var(--spectrum-global-dimension-size-200);
+  background: transparent;
+  border: none;
+  text-align: left;
+  cursor: pointer;
+  font-family: var(--spectrum-alias-body-text-font-family);
+  font-size: var(--spectrum-accordion-item-header-text-size, var(--spectrum-global-dimension-font-size-100));
+  font-weight: var(--spectrum-accordion-item-header-text-font-weight, var(--spectrum-global-font-weight-regular));
+  line-height: var(--spectrum-global-font-line-height-small);
+  color: var(--spectrum-accordion-item-header-text-color, var(--spectrum-global-color-gray-800));
+  transition: background-color var(--spectrum-global-animation-duration-100) ease-in-out;
+}
+
+[data-theme="dark"] .spectrum-Accordion-itemHeader {
+  color: var(--spectrum-global-color-gray-50);
+}
+
+.spectrum-Accordion-itemHeader:hover {
+  background-color: var(--spectrum-accordion-item-header-background-color-hover, var(--spectrum-global-color-gray-75));
+}
+
+[data-theme="dark"] .spectrum-Accordion-itemHeader:hover {
+  background-color: var(--spectrum-global-color-gray-200);
+}
+
+.spectrum-Accordion-itemHeader:focus {
+  outline: var(--spectrum-alias-focus-ring-size) solid var(--spectrum-alias-focus-ring-color);
+  outline-offset: var(--spectrum-alias-focus-ring-gap);
+}
+
+.spectrum-Accordion-itemHeader:disabled {
+  cursor: default;
+  color: var(--spectrum-accordion-item-header-text-color-disabled, var(--spectrum-global-color-gray-400));
+  background-color: transparent;
+}
+
+[data-theme="dark"] .spectrum-Accordion-itemHeader:disabled {
+  color: var(--spectrum-global-color-gray-500);
+}
+
+.spectrum-Accordion-itemIndicator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-inline-end: var(--spectrum-global-dimension-size-100);
+  transition: transform var(--spectrum-global-animation-duration-100) ease-in-out;
+}
+
+.spectrum-Accordion-item.is-open .spectrum-Accordion-itemIndicator {
+  transform: rotate(90deg);
+}
+
+.spectrum-Accordion-itemIndicator .spectrum-Icon {
+  width: var(--spectrum-accordion-item-indicator-width, var(--spectrum-global-dimension-size-150));
+  height: var(--spectrum-accordion-item-indicator-height, var(--spectrum-global-dimension-size-150));
+  fill: currentColor;
+}
+
+.spectrum-Accordion-itemTitle {
+  flex: 1;
+  font-weight: inherit;
+}
+
+.spectrum-Accordion-itemContent {
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height var(--spectrum-global-animation-duration-200) ease-in-out;
+}
+
+.spectrum-Accordion-item.is-open .spectrum-Accordion-itemContent {
+  max-height: 1000px; /* Large enough value for most content */
+}
+
+.spectrum-Accordion-itemBody {
+  padding: 0 var(--spectrum-global-dimension-size-200) var(--spectrum-global-dimension-size-150);
+  color: var(--spectrum-accordion-item-content-text-color, var(--spectrum-global-color-gray-700));
+  font-size: var(--spectrum-accordion-item-content-text-size, var(--spectrum-global-dimension-font-size-75));
+  line-height: var(--spectrum-global-font-line-height-medium);
+}
+
+[data-theme="dark"] .spectrum-Accordion-itemBody {
+  color: var(--spectrum-global-color-gray-200);
+}
+
+/* Scale variants */
+[data-scale="large"] .spectrum-Accordion-itemHeader {
+  padding: var(--spectrum-global-dimension-size-175) var(--spectrum-global-dimension-size-250);
+  font-size: var(--spectrum-global-dimension-font-size-200);
+}
+
+[data-scale="large"] .spectrum-Accordion-itemBody {
+  padding: 0 var(--spectrum-global-dimension-size-250) var(--spectrum-global-dimension-size-175);
+  font-size: var(--spectrum-global-dimension-font-size-100);
+}
+
+[data-scale="large"] .spectrum-Accordion-itemIndicator {
+  margin-inline-end: var(--spectrum-global-dimension-size-125);
+}
+
+[data-scale="large"] .spectrum-Accordion-itemIndicator .spectrum-Icon {
+  width: var(--spectrum-global-dimension-size-175);
+  height: var(--spectrum-global-dimension-size-175);
+}
+
+/* Disabled state */
+.spectrum-Accordion-item.is-disabled .spectrum-Accordion-itemHeader {
+  cursor: default;
+  color: var(--spectrum-global-color-gray-400);
+}
+
+[data-theme="dark"] .spectrum-Accordion-item.is-disabled .spectrum-Accordion-itemHeader {
+  color: var(--spectrum-global-color-gray-500);
+}
+
+.spectrum-Accordion-item.is-disabled .spectrum-Accordion-itemIndicator {
+  opacity: 0.4;
+} 

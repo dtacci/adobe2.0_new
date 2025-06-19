@@ -1,0 +1,6 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+Never use Storybook!! We are to mimic storybook but never use it!

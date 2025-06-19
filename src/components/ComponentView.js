@@ -3,8 +3,13 @@ import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { vscDarkPlus } from 'react-syntax-highlighter/dist/esm/styles/prism';
 
 // Import all spectrum components
+import Accordion from './spectrum/Accordion';
+import Avatar from './spectrum/Avatar';
+import Badge from './spectrum/Badge';
+import Breadcrumbs from './spectrum/Breadcrumbs';
 import Button from './spectrum/Button';
 import ActionButton from './spectrum/ActionButton';
+import Card from './spectrum/Card';
 import Checkbox from './spectrum/Checkbox';
 import Radio from './spectrum/Radio';
 import ColorField from './spectrum/ColorField';
@@ -15,12 +20,12 @@ import Picker from './spectrum/Picker';
 import Search from './spectrum/Search';
 import Slider from './spectrum/Slider';
 import Switch from './spectrum/Switch';
+import Tabs from './spectrum/Tabs';
 import Textfield from './spectrum/Textfield';
 import Toast from './spectrum/Toast';
 import Icon from './spectrum/Icon';
 import Divider from './spectrum/Divider';
 import Link from './spectrum/Link';
-import Badge from './spectrum/Badge';
 import ProgressBar from './spectrum/ProgressBar';
 
 const ComponentView = ({ componentName, theme, scale }) => {
@@ -32,8 +37,13 @@ const ComponentView = ({ componentName, theme, scale }) => {
 
   const getComponentDescription = (name) => {
     const descriptions = {
+      Accordion: "Accordions are commonly used to reduce the need to scroll when presenting multiple sections of content on a single page. They allow users to choose what they want to read or ignore.",
+      Avatar: "Avatars are used to represent a person or entity. They can display an image, initials, or an icon and come in different sizes for various contexts.",
+      Badge: "Badges are used for showing a small amount of color-coded metadata, which are ideal for getting a user's attention.",
+      Breadcrumbs: "Breadcrumbs show hierarchy and navigational context for a user's location within an application. They provide a way to navigate back to previous levels.",
       Button: "Buttons allow users to perform an action or to navigate to another page. They have multiple styles for various needs, and are ideal for calling attention to where a user needs to do something in order to move forward in a flow.",
       ActionButton: "Action buttons allow users to perform an action. They're used for similar, related actions that a user can take.",
+      Card: "Cards are used to group information and actions about a single subject. They make information easy to scan and provide clear entry points for more detailed information.",
       Checkbox: "Checkboxes allow users to select multiple items from a list of individual items, or to mark one individual item as selected.",
       Radio: "Radio buttons allow users to select a single option from a list of mutually exclusive options. All possible options are exposed up front for users to compare.",
       ColorField: "A color field allows users to enter a color value. It includes a color swatch that shows the current color value.",
@@ -44,12 +54,12 @@ const ComponentView = ({ componentName, theme, scale }) => {
       Search: "A search field allows a user to enter a search query. It includes a search icon and can include additional functionality like clear and submit actions.",
       Slider: "Sliders allow users to quickly select a value within a range. They should be used when the upper and lower bounds to the range are invariable.",
       Switch: "Switches allow users to turn an individual option on or off. They are usually used to activate or deactivate a specific setting.",
+      Tabs: "Tabs organize content into multiple sections and allow users to navigate between them. They should be used when the content sections are at the same level of hierarchy.",
       Textfield: "Text fields allow users to enter text. They can be used for single-line or multi-line text input.",
       Toast: "Toasts display brief, temporary notifications. They're meant to be noticed without disrupting a user's experience or requiring an action to be taken.",
       Icon: "Icons are visual symbols used to represent ideas, objects, or actions. They communicate messages at a glance, afford interactivity, and draw attention to important information.",
       Divider: "Dividers bring clarity to a layout by grouping and dividing content in close proximity. They can also be used to establish rhythm and hierarchy.",
       Link: "Links allow users to navigate to a different location. They can be presented inline inside a paragraph or as standalone text.",
-      Badge: "Badges are used for showing a small amount of color-coded metadata, which are ideal for getting a user's attention.",
       ProgressBar: "Progress bars show the progression of a system operation such as downloading, uploading, loading data, submitting a form, or saving updates."
     };
     return descriptions[name] || "A Spectrum component with various interactive states and properties.";
@@ -62,6 +72,95 @@ const ComponentView = ({ componentName, theme, scale }) => {
     const normalizedName = componentName.replace(/\s+/g, '').replace(/[^a-zA-Z]/g, '');
     
     switch (normalizedName) {
+      case 'Accordion':
+        return (
+          <Accordion allowMultiple={props.allowMultiple || false}>
+            <Accordion.Item title="First Section" disabled={props.isDisabled || false}>
+              This is the content for the first accordion section. It can contain any type of content including text, links, or other components.
+            </Accordion.Item>
+            <Accordion.Item title="Second Section">
+              This is the content for the second accordion section. Accordions are great for organizing information into collapsible sections.
+            </Accordion.Item>
+            <Accordion.Item title="Third Section">
+              This is the content for the third accordion section. Users can expand and collapse sections as needed.
+            </Accordion.Item>
+          </Accordion>
+        );
+      case 'Avatar':
+        return (
+          <div style={{ display: 'flex', gap: '12px', alignItems: 'center' }}>
+            <Avatar
+              size={props.size || 'medium'}
+              disabled={props.isDisabled || false}
+              src={props.src}
+              alt={props.alt || 'John Doe'}
+              initials={props.initials}
+            />
+            <Avatar
+              size={props.size || 'medium'}
+              disabled={props.isDisabled || false}
+              initials="JD"
+              alt="Jane Doe"
+            />
+          </div>
+        );
+      case 'Breadcrumbs':
+        return (
+          <Breadcrumbs size={props.size || 'medium'} multiline={props.multiline || false}>
+            <Breadcrumbs.Item href="#" disabled={props.isDisabled || false}>Home</Breadcrumbs.Item>
+            <Breadcrumbs.Item href="#">Category</Breadcrumbs.Item>
+            <Breadcrumbs.Item href="#">Subcategory</Breadcrumbs.Item>
+            <Breadcrumbs.Item>Current Page</Breadcrumbs.Item>
+          </Breadcrumbs>
+        );
+      case 'Card':
+        return (
+          <Card
+            variant={props.variant || 'primary'}
+            layout={props.layout || 'vertical'}
+            selectable={props.selectable || false}
+            selected={props.selected || false}
+            disabled={props.isDisabled || false}
+            style={{ width: '300px' }}
+          >
+            <Card.Header>
+              <Card.Title>Card Title</Card.Title>
+              <Card.Subtitle>Card Subtitle</Card.Subtitle>
+            </Card.Header>
+            <Card.Body>
+              This is the main content area of the card. It can contain any type of content including text, images, or other components.
+            </Card.Body>
+            <Card.Footer>
+              Card footer content
+            </Card.Footer>
+          </Card>
+        );
+      case 'Tabs':
+        return (
+          <Tabs
+            orientation={props.orientation || 'horizontal'}
+            size={props.size || 'medium'}
+            emphasized={props.emphasized || false}
+            disabled={props.isDisabled || false}
+            defaultTab="tab1"
+          >
+            <Tabs.Item tabId="tab1">First Tab</Tabs.Item>
+            <Tabs.Item tabId="tab2" disabled={props.itemDisabled || false}>Second Tab</Tabs.Item>
+            <Tabs.Item tabId="tab3">Third Tab</Tabs.Item>
+            <Tabs.Panel tabId="tab1">
+              <h3>First Tab Content</h3>
+              <p>This is the content for the first tab. It can contain any type of content.</p>
+            </Tabs.Panel>
+            <Tabs.Panel tabId="tab2">
+              <h3>Second Tab Content</h3>
+              <p>This is the content for the second tab.</p>
+            </Tabs.Panel>
+            <Tabs.Panel tabId="tab3">
+              <h3>Third Tab Content</h3>
+              <p>This is the content for the third tab.</p>
+            </Tabs.Panel>
+          </Tabs>
+        );
       case 'Button':
         return (
           <Button

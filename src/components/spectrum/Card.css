@@ -1,0 +1,199 @@
+.spectrum-Card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  background-color: var(--spectrum-card-background-color, var(--spectrum-global-color-gray-50));
+  border: var(--spectrum-card-border-size, 1px) solid var(--spectrum-card-border-color, var(--spectrum-global-color-gray-300));
+  border-radius: var(--spectrum-card-border-radius, var(--spectrum-global-dimension-size-50));
+  overflow: hidden;
+  transition: all var(--spectrum-global-animation-duration-100) ease-in-out;
+}
+
+[data-theme="dark"] .spectrum-Card {
+  background-color: var(--spectrum-global-color-gray-100);
+  border-color: var(--spectrum-global-color-gray-500);
+}
+
+/* Card variants */
+.spectrum-Card--primary {
+  /* Default styling already applied above */
+}
+
+.spectrum-Card--secondary {
+  background-color: transparent;
+  border-color: var(--spectrum-global-color-gray-200);
+}
+
+[data-theme="dark"] .spectrum-Card--secondary {
+  border-color: var(--spectrum-global-color-gray-600);
+}
+
+.spectrum-Card--quiet {
+  background-color: transparent;
+  border: none;
+  box-shadow: none;
+}
+
+/* Horizontal layout */
+.spectrum-Card--horizontal {
+  flex-direction: row;
+}
+
+.spectrum-Card--horizontal .spectrum-Card-image {
+  width: 120px;
+  height: auto;
+  flex-shrink: 0;
+}
+
+.spectrum-Card--horizontal .spectrum-Card-body {
+  flex: 1;
+}
+
+/* Selectable cards */
+.spectrum-Card--selectable {
+  cursor: pointer;
+  user-select: none;
+}
+
+.spectrum-Card--selectable:hover:not(.is-disabled) {
+  border-color: var(--spectrum-card-border-color-hover, var(--spectrum-global-color-gray-400));
+  box-shadow: var(--spectrum-card-box-shadow-hover, 0 2px 4px rgba(0, 0, 0, 0.1));
+  transform: translateY(-1px);
+}
+
+[data-theme="dark"] .spectrum-Card--selectable:hover:not(.is-disabled) {
+  border-color: var(--spectrum-global-color-gray-400);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.spectrum-Card--selectable:focus:not(.is-disabled) {
+  outline: var(--spectrum-alias-focus-ring-size) solid var(--spectrum-alias-focus-ring-color);
+  outline-offset: var(--spectrum-alias-focus-ring-gap);
+}
+
+.spectrum-Card--selectable.is-selected {
+  border-color: var(--spectrum-card-border-color-selected, var(--spectrum-global-color-blue-500));
+  background-color: var(--spectrum-card-background-color-selected, var(--spectrum-global-color-blue-100));
+}
+
+[data-theme="dark"] .spectrum-Card--selectable.is-selected {
+  border-color: var(--spectrum-global-color-blue-400);
+  background-color: var(--spectrum-global-color-blue-200);
+}
+
+/* Card parts */
+.spectrum-Card-header {
+  padding: var(--spectrum-card-header-padding, var(--spectrum-global-dimension-size-200));
+  border-bottom: 1px solid var(--spectrum-global-color-gray-200);
+}
+
+[data-theme="dark"] .spectrum-Card-header {
+  border-bottom-color: var(--spectrum-global-color-gray-500);
+}
+
+.spectrum-Card-body {
+  flex: 1;
+  padding: var(--spectrum-card-body-padding, var(--spectrum-global-dimension-size-200));
+}
+
+.spectrum-Card-footer {
+  padding: var(--spectrum-card-footer-padding, var(--spectrum-global-dimension-size-200));
+  border-top: 1px solid var(--spectrum-global-color-gray-200);
+  background-color: var(--spectrum-card-footer-background-color, var(--spectrum-global-color-gray-75));
+}
+
+[data-theme="dark"] .spectrum-Card-footer {
+  border-top-color: var(--spectrum-global-color-gray-500);
+  background-color: var(--spectrum-global-color-gray-200);
+}
+
+.spectrum-Card-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+}
+
+.spectrum-Card-title {
+  margin: 0 0 var(--spectrum-global-dimension-size-100) 0;
+  font-family: var(--spectrum-alias-body-text-font-family);
+  font-size: var(--spectrum-card-title-text-size, var(--spectrum-global-dimension-font-size-200));
+  font-weight: var(--spectrum-card-title-text-font-weight, var(--spectrum-global-font-weight-bold));
+  line-height: var(--spectrum-global-font-line-height-small);
+  color: var(--spectrum-card-title-text-color, var(--spectrum-global-color-gray-900));
+}
+
+[data-theme="dark"] .spectrum-Card-title {
+  color: var(--spectrum-global-color-gray-50);
+}
+
+.spectrum-Card-subtitle {
+  margin: 0 0 var(--spectrum-global-dimension-size-150) 0;
+  font-family: var(--spectrum-alias-body-text-font-family);
+  font-size: var(--spectrum-card-subtitle-text-size, var(--spectrum-global-dimension-font-size-100));
+  font-weight: var(--spectrum-card-subtitle-text-font-weight, var(--spectrum-global-font-weight-regular));
+  line-height: var(--spectrum-global-font-line-height-medium);
+  color: var(--spectrum-card-subtitle-text-color, var(--spectrum-global-color-gray-700));
+}
+
+[data-theme="dark"] .spectrum-Card-subtitle {
+  color: var(--spectrum-global-color-gray-300);
+}
+
+/* States */
+.spectrum-Card.is-disabled {
+  opacity: var(--spectrum-card-opacity-disabled, 0.4);
+  cursor: default;
+}
+
+.spectrum-Card.is-disabled * {
+  pointer-events: none;
+}
+
+.spectrum-Card.is-focused {
+  border-color: var(--spectrum-card-border-color-focus, var(--spectrum-global-color-blue-500));
+  box-shadow: var(--spectrum-card-box-shadow-focus, 0 0 0 1px var(--spectrum-global-color-blue-500));
+}
+
+[data-theme="dark"] .spectrum-Card.is-focused {
+  border-color: var(--spectrum-global-color-blue-400);
+  box-shadow: 0 0 0 1px var(--spectrum-global-color-blue-400);
+}
+
+/* Scale variants */
+[data-scale="large"] .spectrum-Card-header {
+  padding: var(--spectrum-global-dimension-size-250);
+}
+
+[data-scale="large"] .spectrum-Card-body {
+  padding: var(--spectrum-global-dimension-size-250);
+}
+
+[data-scale="large"] .spectrum-Card-footer {
+  padding: var(--spectrum-global-dimension-size-250);
+}
+
+[data-scale="large"] .spectrum-Card-title {
+  font-size: var(--spectrum-global-dimension-font-size-300);
+}
+
+[data-scale="large"] .spectrum-Card-subtitle {
+  font-size: var(--spectrum-global-dimension-font-size-200);
+}
+
+[data-scale="large"] .spectrum-Card--horizontal .spectrum-Card-image {
+  width: 140px;
+}
+
+/* Responsive behavior */
+@media (max-width: 768px) {
+  .spectrum-Card--horizontal {
+    flex-direction: column;
+  }
+  
+  .spectrum-Card--horizontal .spectrum-Card-image {
+    width: 100%;
+    height: 160px;
+  }
+} 
