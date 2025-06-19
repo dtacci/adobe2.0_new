@@ -74,9 +74,9 @@ const Menu = ({
           <li
             key={item.id}
             className={itemClassNames}
-            role="menuitem"
+            role={selectionMode !== 'none' ? 'menuitemcheckbox' : 'menuitem'}
             aria-disabled={item.disabled}
-            aria-selected={selectionMode !== 'none' ? isSelected : undefined}
+            aria-checked={selectionMode !== 'none' ? isSelected : undefined}
             onClick={() => handleItemClick(item)}
             tabIndex={item.disabled ? -1 : 0}
           >

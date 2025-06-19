@@ -80,6 +80,9 @@ const Picker = ({
           setFocusedIndex(-1);
         }
         break;
+      default:
+        // No action needed for other keys
+        break;
     }
   };
 

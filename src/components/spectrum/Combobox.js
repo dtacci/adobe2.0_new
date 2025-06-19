@@ -88,6 +88,9 @@ const Combobox = ({
         setIsOpen(false);
         setFocusedIndex(-1);
         break;
+      default:
+        // No action needed for other keys
+        break;
     }
   };
 
@@ -128,6 +131,7 @@ const Combobox = ({
           role="combobox"
           aria-expanded={isOpen}
           aria-haspopup="listbox"
+          aria-controls="combobox-listbox"
         />
         <button
           type="button"
@@ -147,6 +151,7 @@ const Combobox = ({
         <div className="spectrum-combobox-popover">
           <ul 
             ref={listRef}
+            id="combobox-listbox"
             className="spectrum-combobox-listbox"
             role="listbox"
           >

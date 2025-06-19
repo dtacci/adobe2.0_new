@@ -12,23 +12,7 @@ const ColorArea = ({
   const [position, setPosition] = useState({ x: 0.5, y: 0.5 });
   const areaRef = useRef(null);
 
-  const handleMouseDown = useCallback((e) => {
-    if (disabled) return;
-    
-    setIsDragging(true);
-    updatePosition(e);
-  }, [disabled]);
-
-  const handleMouseMove = useCallback((e) => {
-    if (!isDragging || disabled) return;
-    updatePosition(e);
-  }, [isDragging, disabled]);
-
-  const handleMouseUp = useCallback(() => {
-    setIsDragging(false);
-  }, []);
-
-  const updatePosition = (e) => {
+  const updatePosition = useCallback((e) => {
     if (!areaRef.current) return;
 
     const rect = areaRef.current.getBoundingClientRect();
@@ -42,7 +26,25 @@ const ColorArea = ({
       const lightness = (1 - y) * 100;
       onChange({ ...value, saturation, lightness });
     }
-  };
+  }, [onChange, value]);
+
+  const handleMouseDown = useCallback((e) => {
+    if (disabled) return;
+    
+    setIsDragging(true);
+    updatePosition(e);
+  }, [disabled, updatePosition]);
+
+  const handleMouseMove = useCallback((e) => {
+    if (!isDragging || disabled) return;
+    updatePosition(e);
+  }, [isDragging, disabled, updatePosition]);
+
+  const handleMouseUp = useCallback(() => {
+    setIsDragging(false);
+  }, []);
+
+
 
   React.useEffect(() => {
     if (isDragging) {
@@ -81,6 +83,7 @@ const ColorArea = ({
         onMouseDown={handleMouseDown}
         role="slider"
         aria-label="Color area"
+        aria-valuenow={Math.round(position.x * 100)}
         tabIndex={disabled ? -1 : 0}
       >
         <div 

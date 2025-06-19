@@ -84,7 +84,7 @@
 
 /* Card parts */
 .spectrum-Card-header {
-  padding: var(--spectrum-card-header-padding, var(--spectrum-global-dimension-size-200));
+  padding: 16px;
   border-bottom: 1px solid var(--spectrum-global-color-gray-200);
 }
 
@@ -94,13 +94,16 @@
 
 .spectrum-Card-body {
   flex: 1;
-  padding: var(--spectrum-card-body-padding, var(--spectrum-global-dimension-size-200));
+  padding: 16px;
+  color: var(--spectrum-global-color-gray-700);
+  font-size: 14px;
+  line-height: 1.5;
 }
 
 .spectrum-Card-footer {
-  padding: var(--spectrum-card-footer-padding, var(--spectrum-global-dimension-size-200));
+  padding: 16px;
   border-top: 1px solid var(--spectrum-global-color-gray-200);
-  background-color: var(--spectrum-card-footer-background-color, var(--spectrum-global-color-gray-75));
+  background-color: var(--spectrum-global-color-gray-75);
 }
 
 [data-theme="dark"] .spectrum-Card-footer {
@@ -116,12 +119,12 @@
 }
 
 .spectrum-Card-title {
-  margin: 0 0 var(--spectrum-global-dimension-size-100) 0;
+  margin: 0 0 8px 0;
   font-family: var(--spectrum-alias-body-text-font-family);
-  font-size: var(--spectrum-card-title-text-size, var(--spectrum-global-dimension-font-size-200));
-  font-weight: var(--spectrum-card-title-text-font-weight, var(--spectrum-global-font-weight-bold));
-  line-height: var(--spectrum-global-font-line-height-small);
-  color: var(--spectrum-card-title-text-color, var(--spectrum-global-color-gray-900));
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.3;
+  color: var(--spectrum-global-color-gray-900);
 }
 
 [data-theme="dark"] .spectrum-Card-title {
@@ -129,12 +132,12 @@
 }
 
 .spectrum-Card-subtitle {
-  margin: 0 0 var(--spectrum-global-dimension-size-150) 0;
+  margin: 0 0 12px 0;
   font-family: var(--spectrum-alias-body-text-font-family);
-  font-size: var(--spectrum-card-subtitle-text-size, var(--spectrum-global-dimension-font-size-100));
-  font-weight: var(--spectrum-card-subtitle-text-font-weight, var(--spectrum-global-font-weight-regular));
-  line-height: var(--spectrum-global-font-line-height-medium);
-  color: var(--spectrum-card-subtitle-text-color, var(--spectrum-global-color-gray-700));
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.4;
+  color: var(--spectrum-global-color-gray-700);
 }
 
 [data-theme="dark"] .spectrum-Card-subtitle {

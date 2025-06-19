@@ -39,14 +39,17 @@ const Avatar = ({
           onError={(e) => {
             // Hide image on error to show initials fallback
             e.target.style.display = 'none';
+            const initials = e.target.parentNode.querySelector('.spectrum-Avatar-initials');
+            if (initials) initials.style.display = 'flex';
           }}
         />
       ) : null}
-      {(!src || getInitials()) && (
-        <span className="spectrum-Avatar-initials">
-          {getInitials()}
-        </span>
-      )}
+      <span 
+        className="spectrum-Avatar-initials"
+        style={{ display: src ? 'none' : 'flex' }}
+      >
+        {getInitials()}
+      </span>
     </div>
   );
 };

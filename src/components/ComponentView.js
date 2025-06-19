@@ -88,19 +88,23 @@ const ComponentView = ({ componentName, theme, scale }) => {
         );
       case 'Avatar':
         return (
-          <div style={{ display: 'flex', gap: '12px', alignItems: 'center' }}>
+          <div style={{ display: 'flex', gap: '12px', alignItems: 'center', flexWrap: 'wrap' }}>
             <Avatar
               size={props.size || 'medium'}
               disabled={props.isDisabled || false}
-              src={props.src}
-              alt={props.alt || 'John Doe'}
-              initials={props.initials}
+              src={props.src || 'https://i.pravatar.cc/150?img=1'}
+              alt="John Doe"
             />
             <Avatar
               size={props.size || 'medium'}
               disabled={props.isDisabled || false}
               initials="JD"
               alt="Jane Doe"
+            />
+            <Avatar
+              size={props.size || 'medium'}
+              disabled={props.isDisabled || false}
+              alt="Alice Smith"
             />
           </div>
         );

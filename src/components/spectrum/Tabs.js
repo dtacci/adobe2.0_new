@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import './Tabs.css';
 
 const TabPanel = ({ children, tabId, activeTab, className = '', ...props }) => {
@@ -34,18 +34,22 @@ const Tabs = ({
   const activeTab = isControlled ? controlledActiveTab : internalActiveTab;
 
   // Extract tab items and panels from children
-  const tabs = [];
-  const panels = [];
-  
-  React.Children.forEach(children, (child) => {
-    if (React.isValidElement(child)) {
-      if (child.type === TabItem) {
-        tabs.push(child);
-      } else if (child.type === TabPanel) {
-        panels.push(child);
+  const { tabs, panels } = useMemo(() => {
+    const tabItems = [];
+    const tabPanels = [];
+    
+    React.Children.forEach(children, (child) => {
+      if (React.isValidElement(child)) {
+        if (child.type === TabItem) {
+          tabItems.push(child);
+        } else if (child.type === TabPanel) {
+          tabPanels.push(child);
+        }
       }
-    }
-  });
+    });
+    
+    return { tabs: tabItems, panels: tabPanels };
+  }, [children]);
 
   // Set initial active tab if not provided
   useEffect(() => {
