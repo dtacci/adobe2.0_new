@@ -18,7 +18,7 @@ const Combobox = ({
   ...props 
 }) => {
   const [isOpen, setIsOpen] = useState(false);
-  const [inputValue, setInputValue] = useState(value);
+  const [inputValue, setInputValue] = useState(value || '');
   const [filteredOptions, setFilteredOptions] = useState(options);
   const [focusedIndex, setFocusedIndex] = useState(-1);
   
@@ -26,12 +26,21 @@ const Combobox = ({
   const listRef = useRef(null);
 
   useEffect(() => {
-    setInputValue(value);
+    setInputValue(value || '');
   }, [value]);
 
   useEffect(() => {
+    if (!Array.isArray(options)) {
+      setFilteredOptions([]);
+      return;
+    }
+    
+    const safeInputValue = (inputValue || '').toString();
     const filtered = options.filter(option => 
-      option.label.toLowerCase().includes(inputValue.toLowerCase())
+      option && 
+      option.label && 
+      typeof option.label === 'string' &&
+      option.label.toLowerCase().includes(safeInputValue.toLowerCase())
     );
     setFilteredOptions(filtered);
     setFocusedIndex(-1);
