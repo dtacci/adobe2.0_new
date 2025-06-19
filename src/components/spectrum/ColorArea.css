@@ -1,0 +1,104 @@
+.spectrum-colorarea {
+  position: relative;
+  display: inline-block;
+  width: var(--spectrum-colorarea-width);
+  height: var(--spectrum-colorarea-height);
+  border-radius: var(--spectrum-corner-radius-100);
+  overflow: hidden;
+}
+
+.spectrum-colorarea-gradient {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border: var(--spectrum-border-width-100) solid var(--spectrum-neutral-border-color-default);
+  border-radius: var(--spectrum-corner-radius-100);
+  cursor: crosshair;
+  user-select: none;
+  transition: border-color var(--spectrum-animation-duration-100) ease-in-out;
+}
+
+.spectrum-colorarea-handle {
+  position: absolute;
+  width: var(--spectrum-colorarea-handle-size);
+  height: var(--spectrum-colorarea-handle-size);
+  border: var(--spectrum-border-width-200) solid var(--spectrum-white);
+  border-radius: 50%;
+  box-shadow: 
+    0 0 0 1px rgba(0, 0, 0, 0.3),
+    0 2px 4px rgba(0, 0, 0, 0.2);
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  transition: all var(--spectrum-animation-duration-100) ease-in-out;
+  z-index: 1;
+}
+
+/* Hover state */
+.spectrum-colorarea:hover .spectrum-colorarea-gradient {
+  border-color: var(--spectrum-neutral-border-color-hover);
+}
+
+.spectrum-colorarea:hover .spectrum-colorarea-handle {
+  transform: translate(-50%, -50%) scale(1.1);
+}
+
+/* Focus state */
+.spectrum-colorarea-gradient:focus {
+  outline: var(--spectrum-focus-ring-thickness) solid var(--spectrum-focus-ring-color);
+  outline-offset: var(--spectrum-focus-ring-gap);
+}
+
+/* Active/Dragging state */
+.spectrum-colorarea--dragging .spectrum-colorarea-gradient {
+  cursor: grabbing;
+}
+
+.spectrum-colorarea--dragging .spectrum-colorarea-handle {
+  transform: translate(-50%, -50%) scale(1.2);
+  box-shadow: 
+    0 0 0 1px rgba(0, 0, 0, 0.4),
+    0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Disabled state */
+.spectrum-colorarea--disabled {
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+.spectrum-colorarea--disabled .spectrum-colorarea-gradient {
+  cursor: not-allowed;
+  border-color: var(--spectrum-disabled-border-color);
+}
+
+.spectrum-colorarea--disabled .spectrum-colorarea-handle {
+  box-shadow: 
+    0 0 0 1px var(--spectrum-disabled-border-color),
+    0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Size variants */
+.spectrum-colorarea--size-small {
+  width: var(--spectrum-colorarea-width-small);
+  height: var(--spectrum-colorarea-height-small);
+}
+
+.spectrum-colorarea--size-small .spectrum-colorarea-handle {
+  width: var(--spectrum-colorarea-handle-size-small);
+  height: var(--spectrum-colorarea-handle-size-small);
+}
+
+.spectrum-colorarea--size-large {
+  width: var(--spectrum-colorarea-width-large);
+  height: var(--spectrum-colorarea-height-large);
+}
+
+.spectrum-colorarea--size-large .spectrum-colorarea-handle {
+  width: var(--spectrum-colorarea-handle-size-large);
+  height: var(--spectrum-colorarea-handle-size-large);
+}
+
+/* Keyboard navigation */
+.spectrum-colorarea-gradient:focus .spectrum-colorarea-handle {
+  transform: translate(-50%, -50%) scale(1.1);
+} 

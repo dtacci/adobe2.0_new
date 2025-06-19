@@ -1,0 +1,198 @@
+.spectrum-picker {
+  position: relative;
+  display: inline-block;
+  min-width: var(--spectrum-field-width);
+}
+
+.spectrum-picker-button {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: var(--spectrum-component-height-100);
+  padding: 0 var(--spectrum-component-height-100) 0 var(--spectrum-component-edge-to-text-100);
+  border: var(--spectrum-border-width-100) solid var(--spectrum-neutral-border-color-default);
+  border-radius: var(--spectrum-corner-radius-100);
+  background-color: var(--spectrum-neutral-background-color-default);
+  color: var(--spectrum-neutral-content-color-default);
+  font-family: var(--spectrum-font-family-base);
+  font-size: var(--spectrum-font-size-100);
+  line-height: var(--spectrum-line-height-100);
+  text-align: left;
+  cursor: pointer;
+  transition: all var(--spectrum-animation-duration-100) ease-in-out;
+  outline: none;
+}
+
+.spectrum-picker-label {
+  flex: 1;
+  min-width: 0;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.spectrum-picker-label--placeholder {
+  color: var(--spectrum-neutral-content-color-default);
+  opacity: 0.6;
+}
+
+.spectrum-picker-icon {
+  position: absolute;
+  right: var(--spectrum-spacing-100);
+  top: 50%;
+  transform: translateY(-50%);
+  width: 12px;
+  height: 12px;
+  transition: transform var(--spectrum-animation-duration-100) ease-in-out;
+  pointer-events: none;
+}
+
+.spectrum-picker-popover {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  margin-top: var(--spectrum-spacing-50);
+  background-color: var(--spectrum-overlay-background-color);
+  border: var(--spectrum-border-width-100) solid var(--spectrum-overlay-border-color);
+  border-radius: var(--spectrum-corner-radius-100);
+  box-shadow: var(--spectrum-drop-shadow-y);
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.spectrum-picker-listbox {
+  margin: 0;
+  padding: var(--spectrum-spacing-50) 0;
+  list-style: none;
+}
+
+.spectrum-picker-option {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--spectrum-spacing-75) var(--spectrum-spacing-100);
+  color: var(--spectrum-neutral-content-color-default);
+  cursor: pointer;
+  transition: all var(--spectrum-animation-duration-100) ease-in-out;
+  font-size: var(--spectrum-font-size-100);
+  line-height: var(--spectrum-line-height-100);
+}
+
+.spectrum-picker-option-label {
+  flex: 1;
+  min-width: 0;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.spectrum-picker-option-checkmark {
+  width: 12px;
+  height: 12px;
+  margin-left: var(--spectrum-spacing-75);
+  color: var(--spectrum-accent-content-color-default);
+  flex-shrink: 0;
+}
+
+.spectrum-picker-option:hover,
+.spectrum-picker-option--focused {
+  background-color: var(--spectrum-neutral-background-color-hover);
+  color: var(--spectrum-neutral-content-color-hover);
+}
+
+.spectrum-picker-option--selected {
+  background-color: var(--spectrum-accent-background-color-default);
+  color: var(--spectrum-white);
+}
+
+.spectrum-picker-option--selected:hover,
+.spectrum-picker-option--selected.spectrum-picker-option--focused {
+  background-color: var(--spectrum-accent-background-color-hover);
+}
+
+.spectrum-picker-option--selected .spectrum-picker-option-checkmark {
+  color: var(--spectrum-white);
+}
+
+/* Hover state */
+.spectrum-picker:hover .spectrum-picker-button {
+  border-color: var(--spectrum-neutral-border-color-hover);
+}
+
+/* Focus state */
+.spectrum-picker-button:focus {
+  border-color: var(--spectrum-accent-border-color-focus);
+  box-shadow: 0 0 0 1px var(--spectrum-accent-border-color-focus);
+}
+
+/* Open state */
+.spectrum-picker--open .spectrum-picker-button {
+  border-color: var(--spectrum-accent-border-color-focus);
+  box-shadow: 0 0 0 1px var(--spectrum-accent-border-color-focus);
+}
+
+.spectrum-picker--open .spectrum-picker-icon {
+  transform: translateY(-50%) rotate(180deg);
+}
+
+/* Invalid state */
+.spectrum-picker--invalid .spectrum-picker-button {
+  border-color: var(--spectrum-negative-border-color-default);
+}
+
+.spectrum-picker--invalid .spectrum-picker-button:focus {
+  border-color: var(--spectrum-negative-border-color-focus);
+  box-shadow: 0 0 0 1px var(--spectrum-negative-border-color-focus);
+}
+
+/* Disabled state */
+.spectrum-picker--disabled .spectrum-picker-button {
+  background-color: var(--spectrum-disabled-background-color);
+  border-color: var(--spectrum-disabled-border-color);
+  color: var(--spectrum-disabled-content-color);
+  cursor: not-allowed;
+}
+
+.spectrum-picker--disabled .spectrum-picker-icon {
+  color: var(--spectrum-disabled-content-color);
+}
+
+/* Read-only state */
+.spectrum-picker--readonly .spectrum-picker-button {
+  background-color: var(--spectrum-gray-100);
+  border-color: var(--spectrum-gray-300);
+  cursor: default;
+}
+
+.spectrum-picker--readonly .spectrum-picker-icon {
+  display: none;
+}
+
+/* Size variants */
+.spectrum-picker--size-small .spectrum-picker-button {
+  height: var(--spectrum-component-height-75);
+  font-size: var(--spectrum-font-size-75);
+  padding: 0 var(--spectrum-component-height-75) 0 var(--spectrum-component-edge-to-text-75);
+}
+
+.spectrum-picker--size-small .spectrum-picker-icon {
+  right: var(--spectrum-spacing-75);
+  width: 10px;
+  height: 10px;
+}
+
+.spectrum-picker--size-large .spectrum-picker-button {
+  height: var(--spectrum-component-height-200);
+  font-size: var(--spectrum-font-size-200);
+  padding: 0 var(--spectrum-component-height-200) 0 var(--spectrum-component-edge-to-text-200);
+}
+
+.spectrum-picker--size-large .spectrum-picker-icon {
+  right: var(--spectrum-spacing-200);
+  width: 14px;
+  height: 14px;
+} 

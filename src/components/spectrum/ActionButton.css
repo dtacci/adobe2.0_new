@@ -1,0 +1,156 @@
+/* ActionButton Component Styles */
+.spectrum-actionbutton {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  border: var(--spectrum-border-width-100) solid var(--spectrum-border-color-default);
+  border-radius: var(--spectrum-corner-radius-100);
+  background-color: var(--spectrum-neutral-background-color-default);
+  color: var(--spectrum-neutral-content-color-default);
+  font-family: var(--spectrum-font-family);
+  font-weight: var(--spectrum-font-weight-regular);
+  line-height: var(--spectrum-line-height-100);
+  text-decoration: none;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: background-color var(--spectrum-animation-duration-100) var(--spectrum-animation-ease-in-out),
+              border-color var(--spectrum-animation-duration-100) var(--spectrum-animation-ease-in-out),
+              color var(--spectrum-animation-duration-100) var(--spectrum-animation-ease-in-out),
+              box-shadow var(--spectrum-animation-duration-100) var(--spectrum-animation-ease-in-out);
+  vertical-align: top;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-appearance: none;
+  user-select: none;
+}
+
+.spectrum-actionbutton:focus {
+  outline: none;
+}
+
+.spectrum-actionbutton:focus-visible {
+  box-shadow: 0 0 0 var(--spectrum-focus-indicator-thickness) var(--spectrum-focus-indicator-color);
+}
+
+.spectrum-actionbutton-label {
+  align-self: center;
+  justify-self: center;
+  text-align: center;
+  font-size: inherit;
+  line-height: inherit;
+  font-weight: inherit;
+}
+
+/* Size Variants */
+.spectrum-actionbutton--size-small {
+  height: var(--spectrum-component-height-100);
+  padding: 0 var(--spectrum-component-edge-to-text-100);
+  font-size: var(--spectrum-font-size-75);
+}
+
+.spectrum-actionbutton--size-medium {
+  height: var(--spectrum-component-height-200);
+  padding: 0 var(--spectrum-component-edge-to-text-200);
+  font-size: var(--spectrum-font-size-100);
+}
+
+.spectrum-actionbutton--size-large {
+  height: var(--spectrum-component-height-300);
+  padding: 0 var(--spectrum-component-edge-to-text-300);
+  font-size: var(--spectrum-font-size-200);
+}
+
+/* Hover State */
+.spectrum-actionbutton:hover:not(:disabled) {
+  background-color: var(--spectrum-neutral-background-color-hover);
+  border-color: var(--spectrum-border-color-hover);
+  color: var(--spectrum-neutral-content-color-hover);
+}
+
+/* Active State */
+.spectrum-actionbutton:active:not(:disabled) {
+  background-color: var(--spectrum-neutral-background-color-down);
+  border-color: var(--spectrum-border-color-down);
+  color: var(--spectrum-neutral-content-color-down);
+}
+
+/* Selected State */
+.spectrum-actionbutton--selected {
+  background-color: var(--spectrum-neutral-background-color-selected-default);
+  border-color: var(--spectrum-border-color-default);
+  color: var(--spectrum-neutral-content-color-default);
+}
+
+.spectrum-actionbutton--selected:hover:not(:disabled) {
+  background-color: var(--spectrum-neutral-background-color-selected-hover);
+  border-color: var(--spectrum-border-color-hover);
+}
+
+.spectrum-actionbutton--selected:active:not(:disabled) {
+  background-color: var(--spectrum-neutral-background-color-selected-down);
+  border-color: var(--spectrum-border-color-down);
+}
+
+/* Emphasized Variant */
+.spectrum-actionbutton--emphasized {
+  background-color: var(--spectrum-accent-color-600);
+  border-color: var(--spectrum-accent-color-600);
+  color: var(--spectrum-gray-50);
+}
+
+.spectrum-actionbutton--emphasized:hover:not(:disabled) {
+  background-color: var(--spectrum-accent-color-700);
+  border-color: var(--spectrum-accent-color-700);
+}
+
+.spectrum-actionbutton--emphasized:active:not(:disabled) {
+  background-color: var(--spectrum-accent-color-800);
+  border-color: var(--spectrum-accent-color-800);
+}
+
+/* Quiet Variant */
+.spectrum-actionbutton--quiet {
+  background-color: transparent;
+  border-color: transparent;
+}
+
+.spectrum-actionbutton--quiet:hover:not(:disabled) {
+  background-color: var(--spectrum-neutral-background-color-hover);
+  border-color: transparent;
+}
+
+.spectrum-actionbutton--quiet:active:not(:disabled) {
+  background-color: var(--spectrum-neutral-background-color-down);
+  border-color: transparent;
+}
+
+.spectrum-actionbutton--quiet.spectrum-actionbutton--selected {
+  background-color: var(--spectrum-neutral-background-color-selected-default);
+  border-color: transparent;
+}
+
+.spectrum-actionbutton--quiet.spectrum-actionbutton--selected:hover:not(:disabled) {
+  background-color: var(--spectrum-neutral-background-color-selected-hover);
+}
+
+.spectrum-actionbutton--quiet.spectrum-actionbutton--selected:active:not(:disabled) {
+  background-color: var(--spectrum-neutral-background-color-selected-down);
+}
+
+/* Disabled State */
+.spectrum-actionbutton--disabled,
+.spectrum-actionbutton:disabled {
+  background-color: var(--spectrum-disabled-background-color);
+  border-color: var(--spectrum-disabled-border-color);
+  color: var(--spectrum-disabled-content-color);
+  cursor: default;
+}
+
+.spectrum-actionbutton--quiet.spectrum-actionbutton--disabled,
+.spectrum-actionbutton--quiet:disabled {
+  background-color: transparent;
+  border-color: transparent;
+  color: var(--spectrum-disabled-content-color);
+} 

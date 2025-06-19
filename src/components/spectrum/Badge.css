@@ -1,0 +1,140 @@
+/* Badge Component Styles */
+.spectrum-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  border-radius: var(--spectrum-badge-border-radius);
+  border-width: var(--spectrum-border-width-100);
+  border-style: solid;
+  font-family: var(--spectrum-font-family-base);
+  font-weight: var(--spectrum-font-weight-regular);
+  line-height: var(--spectrum-line-height-100);
+  text-align: center;
+  vertical-align: top;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.spectrum-badge-label {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Size Variants */
+.spectrum-badge--size-s {
+  min-height: var(--spectrum-component-height-75);
+  padding: 0 var(--spectrum-spacing-75);
+  font-size: var(--spectrum-font-size-75);
+  --spectrum-badge-border-radius: var(--spectrum-corner-radius-75);
+}
+
+.spectrum-badge--size-m {
+  min-height: var(--spectrum-component-height-100);
+  padding: 0 var(--spectrum-spacing-100);
+  font-size: var(--spectrum-font-size-100);
+  --spectrum-badge-border-radius: var(--spectrum-corner-radius-100);
+}
+
+.spectrum-badge--size-l {
+  min-height: var(--spectrum-component-height-200);
+  padding: 0 var(--spectrum-spacing-200);
+  font-size: var(--spectrum-font-size-200);
+  --spectrum-badge-border-radius: var(--spectrum-corner-radius-100);
+}
+
+/* Color Variants */
+.spectrum-badge--neutral {
+  background-color: var(--spectrum-neutral-background-color-default);
+  border-color: var(--spectrum-neutral-border-color-default);
+  color: var(--spectrum-neutral-content-color-default);
+}
+
+.spectrum-badge--accent {
+  background-color: var(--spectrum-accent-background-color-default);
+  border-color: var(--spectrum-accent-border-color-default);
+  color: var(--spectrum-white);
+}
+
+.spectrum-badge--positive {
+  background-color: var(--spectrum-positive-background-color-default);
+  border-color: var(--spectrum-positive-border-color-default);
+  color: var(--spectrum-white);
+}
+
+.spectrum-badge--negative {
+  background-color: var(--spectrum-negative-background-color-default);
+  border-color: var(--spectrum-negative-border-color-default);
+  color: var(--spectrum-white);
+}
+
+.spectrum-badge--notice {
+  background-color: var(--spectrum-notice-background-color-default);
+  border-color: var(--spectrum-notice-border-color-default);
+  color: var(--spectrum-black);
+}
+
+.spectrum-badge--info {
+  background-color: var(--spectrum-info-background-color-default);
+  border-color: var(--spectrum-info-border-color-default);
+  color: var(--spectrum-white);
+}
+
+.spectrum-badge--seafoam {
+  background-color: var(--spectrum-seafoam-background-color-default);
+  border-color: var(--spectrum-seafoam-border-color-default);
+  color: var(--spectrum-black);
+}
+
+.spectrum-badge--chartreuse {
+  background-color: var(--spectrum-chartreuse-background-color-default);
+  border-color: var(--spectrum-chartreuse-border-color-default);
+  color: var(--spectrum-black);
+}
+
+.spectrum-badge--yellow {
+  background-color: var(--spectrum-yellow-background-color-default);
+  border-color: var(--spectrum-yellow-border-color-default);
+  color: var(--spectrum-black);
+}
+
+.spectrum-badge--magenta {
+  background-color: var(--spectrum-magenta-background-color-default);
+  border-color: var(--spectrum-magenta-border-color-default);
+  color: var(--spectrum-white);
+}
+
+.spectrum-badge--fuchsia {
+  background-color: var(--spectrum-fuchsia-background-color-default);
+  border-color: var(--spectrum-fuchsia-border-color-default);
+  color: var(--spectrum-white);
+}
+
+.spectrum-badge--purple {
+  background-color: var(--spectrum-purple-background-color-default);
+  border-color: var(--spectrum-purple-border-color-default);
+  color: var(--spectrum-white);
+}
+
+.spectrum-badge--indigo {
+  background-color: var(--spectrum-indigo-background-color-default);
+  border-color: var(--spectrum-indigo-border-color-default);
+  color: var(--spectrum-white);
+}
+
+.spectrum-badge--cyan {
+  background-color: var(--spectrum-cyan-background-color-default);
+  border-color: var(--spectrum-cyan-border-color-default);
+  color: var(--spectrum-black);
+}
+
+/* High contrast mode support */
+@media (forced-colors: active) {
+  .spectrum-badge {
+    forced-color-adjust: none;
+    background-color: ButtonText;
+    border-color: ButtonText;
+    color: ButtonFace;
+  }
+} 

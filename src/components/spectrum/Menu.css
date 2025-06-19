@@ -1,0 +1,155 @@
+.spectrum-menu {
+  margin: 0;
+  padding: var(--spectrum-spacing-50) 0;
+  list-style: none;
+  min-width: 160px;
+  background-color: var(--spectrum-overlay-background-color);
+  border: var(--spectrum-border-width-100) solid var(--spectrum-overlay-border-color);
+  border-radius: var(--spectrum-corner-radius-100);
+  box-shadow: var(--spectrum-drop-shadow-y);
+  font-family: var(--spectrum-font-family-base);
+  font-size: var(--spectrum-font-size-100);
+  line-height: var(--spectrum-line-height-100);
+}
+
+.spectrum-menu-item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: var(--spectrum-spacing-75) var(--spectrum-spacing-100);
+  color: var(--spectrum-neutral-content-color-default);
+  cursor: pointer;
+  transition: all var(--spectrum-animation-duration-100) ease-in-out;
+  outline: none;
+  user-select: none;
+}
+
+.spectrum-menu-item:hover {
+  background-color: var(--spectrum-neutral-background-color-hover);
+  color: var(--spectrum-neutral-content-color-hover);
+}
+
+.spectrum-menu-item:focus {
+  background-color: var(--spectrum-neutral-background-color-key-focus);
+  outline: var(--spectrum-focus-ring-thickness) solid var(--spectrum-focus-ring-color);
+  outline-offset: calc(-1 * var(--spectrum-focus-ring-thickness));
+}
+
+.spectrum-menu-item:active {
+  background-color: var(--spectrum-neutral-background-color-down);
+}
+
+.spectrum-menu-item-checkmark {
+  width: 16px;
+  height: 16px;
+  margin-right: var(--spectrum-spacing-75);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.spectrum-menu-item-checkmark .spectrum-icon {
+  width: 12px;
+  height: 12px;
+  color: var(--spectrum-accent-content-color-default);
+}
+
+.spectrum-menu-item-label {
+  flex: 1;
+  min-width: 0;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.spectrum-menu-item-value {
+  margin-left: var(--spectrum-spacing-200);
+  color: var(--spectrum-neutral-content-color-default);
+  opacity: 0.7;
+  font-size: var(--spectrum-font-size-75);
+  flex-shrink: 0;
+}
+
+.spectrum-menu-divider {
+  height: 1px;
+  margin: var(--spectrum-spacing-50) var(--spectrum-spacing-100);
+  background-color: var(--spectrum-neutral-border-color-default);
+}
+
+/* Selected state */
+.spectrum-menu-item--selected {
+  background-color: var(--spectrum-accent-background-color-default);
+  color: var(--spectrum-white);
+}
+
+.spectrum-menu-item--selected:hover {
+  background-color: var(--spectrum-accent-background-color-hover);
+}
+
+.spectrum-menu-item--selected:active {
+  background-color: var(--spectrum-accent-background-color-down);
+}
+
+.spectrum-menu-item--selected .spectrum-menu-item-value {
+  color: var(--spectrum-white);
+  opacity: 0.8;
+}
+
+/* Disabled state */
+.spectrum-menu-item--disabled {
+  color: var(--spectrum-disabled-content-color);
+  cursor: default;
+  pointer-events: none;
+}
+
+.spectrum-menu-item--disabled .spectrum-menu-item-value {
+  color: var(--spectrum-disabled-content-color);
+}
+
+/* Size variants */
+.spectrum-menu--size-small .spectrum-menu-item {
+  padding: var(--spectrum-spacing-50) var(--spectrum-spacing-75);
+  font-size: var(--spectrum-font-size-75);
+}
+
+.spectrum-menu--size-small .spectrum-menu-item-checkmark {
+  width: 14px;
+  height: 14px;
+  margin-right: var(--spectrum-spacing-50);
+}
+
+.spectrum-menu--size-small .spectrum-menu-item-checkmark .spectrum-icon {
+  width: 10px;
+  height: 10px;
+}
+
+.spectrum-menu--size-small .spectrum-menu-divider {
+  margin: var(--spectrum-spacing-50) var(--spectrum-spacing-75);
+}
+
+.spectrum-menu--size-large .spectrum-menu-item {
+  padding: var(--spectrum-spacing-100) var(--spectrum-spacing-200);
+  font-size: var(--spectrum-font-size-200);
+}
+
+.spectrum-menu--size-large .spectrum-menu-item-checkmark {
+  width: 18px;
+  height: 18px;
+  margin-right: var(--spectrum-spacing-100);
+}
+
+.spectrum-menu--size-large .spectrum-menu-item-checkmark .spectrum-icon {
+  width: 14px;
+  height: 14px;
+}
+
+.spectrum-menu--size-large .spectrum-menu-divider {
+  margin: var(--spectrum-spacing-75) var(--spectrum-spacing-200);
+}
+
+/* Keyboard navigation */
+.spectrum-menu-item[tabindex="0"]:focus-visible {
+  outline: var(--spectrum-focus-ring-thickness) solid var(--spectrum-focus-ring-color);
+  outline-offset: calc(-1 * var(--spectrum-focus-ring-thickness));
+} 

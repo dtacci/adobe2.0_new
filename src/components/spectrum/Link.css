@@ -1,0 +1,119 @@
+/* Link Component Styles */
+.spectrum-link {
+  color: var(--spectrum-link-color, var(--spectrum-accent-content-color-default));
+  text-decoration: underline;
+  text-decoration-color: var(--spectrum-link-decoration-color, transparent);
+  text-decoration-thickness: var(--spectrum-text-decoration-thickness);
+  text-underline-offset: var(--spectrum-text-underline-offset);
+  font-family: var(--spectrum-font-family-base);
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+  cursor: pointer;
+  transition: color var(--spectrum-animation-duration-100) ease-in-out,
+              text-decoration-color var(--spectrum-animation-duration-100) ease-in-out;
+  outline: none;
+}
+
+/* Base Link States */
+.spectrum-link:hover {
+  color: var(--spectrum-link-color-hover, var(--spectrum-accent-content-color-hover));
+  text-decoration-color: var(--spectrum-link-decoration-color-hover, currentColor);
+}
+
+.spectrum-link:active {
+  color: var(--spectrum-link-color-down, var(--spectrum-accent-content-color-down));
+}
+
+.spectrum-link:focus-visible {
+  color: var(--spectrum-link-color-key-focus, var(--spectrum-accent-content-color-key-focus));
+  outline: var(--spectrum-focus-ring-thickness) solid var(--spectrum-focus-ring-color);
+  outline-offset: var(--spectrum-focus-ring-gap);
+  border-radius: var(--spectrum-corner-radius-75);
+}
+
+/* Primary Variant (default) */
+.spectrum-link--primary {
+  --spectrum-link-color: var(--spectrum-accent-content-color-default);
+  --spectrum-link-color-hover: var(--spectrum-accent-content-color-hover);
+  --spectrum-link-color-down: var(--spectrum-accent-content-color-down);
+  --spectrum-link-color-key-focus: var(--spectrum-accent-content-color-key-focus);
+  --spectrum-link-decoration-color-hover: currentColor;
+}
+
+/* Secondary Variant */
+.spectrum-link--secondary {
+  --spectrum-link-color: var(--spectrum-neutral-content-color-default);
+  --spectrum-link-color-hover: var(--spectrum-neutral-content-color-hover);
+  --spectrum-link-color-down: var(--spectrum-neutral-content-color-down);
+  --spectrum-link-color-key-focus: var(--spectrum-neutral-content-color-key-focus);
+  --spectrum-link-decoration-color-hover: currentColor;
+}
+
+/* Over Background Variant */
+.spectrum-link--over-background {
+  --spectrum-link-color: var(--spectrum-white);
+  --spectrum-link-color-hover: var(--spectrum-white);
+  --spectrum-link-color-down: var(--spectrum-white);
+  --spectrum-link-color-key-focus: var(--spectrum-white);
+  --spectrum-link-decoration-color-hover: currentColor;
+}
+
+/* Quiet Variant */
+.spectrum-link--quiet {
+  text-decoration: none;
+}
+
+.spectrum-link--quiet:hover {
+  text-decoration: underline;
+  text-decoration-color: currentColor;
+}
+
+/* Static Colors */
+.spectrum-link--static-white {
+  --spectrum-link-color: var(--spectrum-white);
+  --spectrum-link-color-hover: var(--spectrum-white);
+  --spectrum-link-color-down: var(--spectrum-white);
+  --spectrum-link-color-key-focus: var(--spectrum-white);
+}
+
+.spectrum-link--static-black {
+  --spectrum-link-color: var(--spectrum-black);
+  --spectrum-link-color-hover: var(--spectrum-black);
+  --spectrum-link-color-down: var(--spectrum-black);
+  --spectrum-link-color-key-focus: var(--spectrum-black);
+}
+
+/* Disabled State */
+.spectrum-link[aria-disabled="true"],
+.spectrum-link:disabled {
+  color: var(--spectrum-disabled-content-color);
+  cursor: default;
+  text-decoration: none;
+  pointer-events: none;
+}
+
+/* Text decoration properties */
+:root {
+  --spectrum-text-decoration-thickness: 1px;
+  --spectrum-text-underline-offset: 0.15em;
+}
+
+/* High contrast mode support */
+@media (forced-colors: active) {
+  .spectrum-link {
+    forced-color-adjust: none;
+    color: LinkText;
+  }
+  
+  .spectrum-link:hover,
+  .spectrum-link:focus-visible {
+    color: LinkText;
+    text-decoration: underline;
+  }
+  
+  .spectrum-link[aria-disabled="true"],
+  .spectrum-link:disabled {
+    color: GrayText;
+  }
+} 

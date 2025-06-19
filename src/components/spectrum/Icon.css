@@ -1,0 +1,171 @@
+/* Icon Component Styles */
+.spectrum-icon {
+  display: inline-block;
+  vertical-align: middle;
+  flex-shrink: 0;
+  color: var(--spectrum-icon-color, var(--spectrum-neutral-content-color-default));
+  fill: currentColor;
+}
+
+/* Icon Sizes */
+.spectrum-icon--size-s {
+  width: var(--spectrum-icon-size-s);
+  height: var(--spectrum-icon-size-s);
+}
+
+.spectrum-icon--size-m {
+  width: var(--spectrum-icon-size-m);
+  height: var(--spectrum-icon-size-m);
+}
+
+.spectrum-icon--size-l {
+  width: var(--spectrum-icon-size-l);
+  height: var(--spectrum-icon-size-l);
+}
+
+.spectrum-icon--size-xl {
+  width: var(--spectrum-icon-size-xl);
+  height: var(--spectrum-icon-size-xl);
+}
+
+.spectrum-icon--size-xxl {
+  width: var(--spectrum-icon-size-xxl);
+  height: var(--spectrum-icon-size-xxl);
+}
+
+/* Icon Color Variants */
+.spectrum-icon--color-positive {
+  color: var(--spectrum-positive-color-default);
+}
+
+.spectrum-icon--color-negative {
+  color: var(--spectrum-negative-color-default);
+}
+
+.spectrum-icon--color-notice {
+  color: var(--spectrum-notice-color-default);
+}
+
+.spectrum-icon--color-info {
+  color: var(--spectrum-info-color-default);
+}
+
+.spectrum-icon--color-accent {
+  color: var(--spectrum-accent-color-default);
+}
+
+.spectrum-icon--color-neutral {
+  color: var(--spectrum-neutral-content-color-default);
+}
+
+.spectrum-icon--color-disabled {
+  color: var(--spectrum-disabled-content-color);
+}
+
+/* Interactive states for clickable icons */
+.spectrum-icon--interactive {
+  cursor: pointer;
+  transition: color var(--spectrum-animation-duration-100) ease-in-out;
+}
+
+.spectrum-icon--interactive:hover {
+  color: var(--spectrum-neutral-content-color-hover);
+}
+
+.spectrum-icon--interactive:active {
+  color: var(--spectrum-neutral-content-color-down);
+}
+
+.spectrum-icon--interactive:focus {
+  outline: var(--spectrum-focus-ring-size) solid var(--spectrum-focus-ring-color);
+  outline-offset: var(--spectrum-focus-ring-gap);
+  border-radius: var(--spectrum-border-radius-sm);
+}
+
+/* Icon in buttons */
+.spectrum-button .spectrum-icon {
+  margin-inline-start: calc(-1 * var(--spectrum-component-edge-to-text));
+}
+
+.spectrum-button .spectrum-icon + .spectrum-button-label {
+  margin-inline-start: var(--spectrum-text-to-visual-100);
+}
+
+.spectrum-button .spectrum-button-label + .spectrum-icon {
+  margin-inline-start: var(--spectrum-text-to-visual-100);
+  margin-inline-end: calc(-1 * var(--spectrum-component-edge-to-text));
+}
+
+/* Icon only buttons */
+.spectrum-button--icon-only .spectrum-icon {
+  margin: 0;
+}
+
+/* Icon in action buttons */
+.spectrum-actionbutton .spectrum-icon {
+  margin-inline-start: calc(-1 * var(--spectrum-component-edge-to-text));
+}
+
+.spectrum-actionbutton .spectrum-icon + .spectrum-actionbutton-label {
+  margin-inline-start: var(--spectrum-text-to-visual-100);
+}
+
+/* Icon in text fields */
+.spectrum-textfield .spectrum-icon {
+  color: var(--spectrum-neutral-content-color-default);
+  margin-inline-end: var(--spectrum-text-to-visual-100);
+}
+
+/* Icon in search */
+.spectrum-search .spectrum-icon {
+  color: var(--spectrum-neutral-content-color-default);
+  position: absolute;
+  left: var(--spectrum-component-edge-to-text);
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+/* Icon in menu items */
+.spectrum-menu-item .spectrum-icon {
+  margin-inline-end: var(--spectrum-text-to-visual-100);
+  flex-shrink: 0;
+}
+
+/* Icon in toast */
+.spectrum-toast .spectrum-icon {
+  margin-inline-end: var(--spectrum-text-to-visual-100);
+  flex-shrink: 0;
+}
+
+/* Icon in status light */
+.spectrum-statuslight .spectrum-icon {
+  margin-inline-end: var(--spectrum-text-to-visual-75);
+}
+
+/* Icon animations */
+@keyframes spectrum-icon-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.spectrum-icon--spin {
+  animation: spectrum-icon-spin 1s linear infinite;
+}
+
+/* Icon decorative styles */
+.spectrum-icon--decorative {
+  pointer-events: none;
+  user-select: none;
+}
+
+/* High contrast mode support */
+@media (forced-colors: active) {
+  .spectrum-icon {
+    forced-color-adjust: auto;
+  }
+} 

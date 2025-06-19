@@ -1,0 +1,144 @@
+.spectrum-search {
+  position: relative;
+  display: inline-flex;
+  min-width: var(--spectrum-field-width-100);
+}
+
+.spectrum-search-input {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  border: var(--spectrum-border-width-100) solid var(--spectrum-border-color-default);
+  border-radius: var(--spectrum-corner-radius-100);
+  background-color: var(--spectrum-background-color-default);
+  transition: all var(--spectrum-animation-duration-100) ease-in-out;
+}
+
+.spectrum-search-input:hover {
+  border-color: var(--spectrum-border-color-hover);
+}
+
+.spectrum-search-input:focus-within {
+  border-color: var(--spectrum-border-color-focus);
+  box-shadow: 0 0 0 1px var(--spectrum-border-color-focus);
+}
+
+.spectrum-search.is-invalid .spectrum-search-input {
+  border-color: var(--spectrum-border-color-negative);
+}
+
+.spectrum-search.is-invalid .spectrum-search-input:focus-within {
+  border-color: var(--spectrum-border-color-negative);
+  box-shadow: 0 0 0 1px var(--spectrum-border-color-negative);
+}
+
+.spectrum-search.is-disabled .spectrum-search-input {
+  background-color: var(--spectrum-background-color-disabled);
+  border-color: var(--spectrum-border-color-disabled);
+  color: var(--spectrum-text-color-disabled);
+  cursor: not-allowed;
+}
+
+.spectrum-icon--search {
+  width: var(--spectrum-icon-size-75);
+  height: var(--spectrum-icon-size-75);
+  margin-left: var(--spectrum-spacing-100);
+  margin-right: var(--spectrum-spacing-75);
+  fill: var(--spectrum-icon-color-default);
+  flex-shrink: 0;
+}
+
+.spectrum-search-input input {
+  flex: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-family: var(--spectrum-font-family-base);
+  font-size: var(--spectrum-font-size-100);
+  line-height: var(--spectrum-line-height-100);
+  color: var(--spectrum-text-color-default);
+  padding: var(--spectrum-spacing-75) 0;
+  min-height: var(--spectrum-component-height-100);
+}
+
+.spectrum-search-input input::placeholder {
+  color: var(--spectrum-text-color-placeholder);
+}
+
+.spectrum-search-input input:disabled {
+  color: var(--spectrum-text-color-disabled);
+  cursor: not-allowed;
+}
+
+.spectrum-clearbutton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--spectrum-component-height-75);
+  height: var(--spectrum-component-height-75);
+  margin-right: var(--spectrum-spacing-75);
+  border: none;
+  background: transparent;
+  border-radius: var(--spectrum-corner-radius-75);
+  cursor: pointer;
+  transition: background-color var(--spectrum-animation-duration-100) ease-in-out;
+}
+
+.spectrum-clearbutton:hover {
+  background-color: var(--spectrum-background-color-gray-200);
+}
+
+.spectrum-clearbutton:focus {
+  outline: none;
+  background-color: var(--spectrum-background-color-gray-200);
+  box-shadow: 0 0 0 2px var(--spectrum-focus-ring-color);
+}
+
+.spectrum-clearbutton:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.spectrum-icon--clear {
+  width: var(--spectrum-icon-size-75);
+  height: var(--spectrum-icon-size-75);
+  fill: var(--spectrum-icon-color-default);
+}
+
+/* Quiet variant */
+.spectrum-search--quiet .spectrum-search-input {
+  border-left: none;
+  border-right: none;
+  border-top: none;
+  border-radius: 0;
+  background-color: transparent;
+}
+
+.spectrum-search--quiet .spectrum-search-input:hover {
+  border-bottom-color: var(--spectrum-border-color-hover);
+}
+
+.spectrum-search--quiet .spectrum-search-input:focus-within {
+  border-bottom-color: var(--spectrum-border-color-focus);
+  box-shadow: 0 1px 0 0 var(--spectrum-border-color-focus);
+}
+
+/* Size variants */
+.spectrum-search--size-s .spectrum-search-input input {
+  min-height: var(--spectrum-component-height-75);
+  font-size: var(--spectrum-font-size-75);
+  padding: var(--spectrum-spacing-50) 0;
+}
+
+.spectrum-search--size-l .spectrum-search-input input {
+  min-height: var(--spectrum-component-height-200);
+  font-size: var(--spectrum-font-size-200);
+  padding: var(--spectrum-spacing-100) 0;
+}
+
+.spectrum-search--size-xl .spectrum-search-input input {
+  min-height: var(--spectrum-component-height-300);
+  font-size: var(--spectrum-font-size-300);
+  padding: var(--spectrum-spacing-150) 0;
+} 

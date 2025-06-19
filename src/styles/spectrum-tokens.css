@@ -1,0 +1,369 @@
+/* Adobe Spectrum Design Tokens */
+:root {
+  /* Animation */
+  --spectrum-animation-linear: cubic-bezier(0, 0, 1, 1);
+  --spectrum-animation-duration-0: 0s;
+  --spectrum-animation-duration-100: 0.13s;
+  --spectrum-animation-duration-200: 0.16s;
+  --spectrum-animation-duration-300: 0.19s;
+  --spectrum-animation-duration-400: 0.22s;
+  --spectrum-animation-duration-500: 0.25s;
+  --spectrum-animation-duration-600: 0.3s;
+  --spectrum-animation-duration-700: 0.35s;
+  --spectrum-animation-duration-800: 0.4s;
+  --spectrum-animation-duration-900: 0.45s;
+  --spectrum-animation-duration-1000: 0.5s;
+  --spectrum-animation-duration-2000: 1s;
+  --spectrum-animation-duration-4000: 2s;
+  --spectrum-animation-ease-in-out: cubic-bezier(0.45, 0, 0.4, 1);
+  --spectrum-animation-ease-in: cubic-bezier(0.5, 0, 1, 1);
+  --spectrum-animation-ease-out: cubic-bezier(0, 0, 0.4, 1);
+  
+  /* Colors - Light Theme */
+  --spectrum-gray-50: rgb(255, 255, 255);
+  --spectrum-gray-75: rgb(253, 253, 253);
+  --spectrum-gray-100: rgb(248, 248, 248);
+  --spectrum-gray-200: rgb(230, 230, 230);
+  --spectrum-gray-300: rgb(213, 213, 213);
+  --spectrum-gray-400: rgb(177, 177, 177);
+  --spectrum-gray-500: rgb(144, 144, 144);
+  --spectrum-gray-600: rgb(109, 109, 109);
+  --spectrum-gray-700: rgb(70, 70, 70);
+  --spectrum-gray-800: rgb(34, 34, 34);
+  --spectrum-gray-900: rgb(0, 0, 0);
+  
+  /* Blue Colors */
+  --spectrum-blue-100: rgb(230, 244, 255);
+  --spectrum-blue-200: rgb(202, 232, 255);
+  --spectrum-blue-300: rgb(173, 220, 255);
+  --spectrum-blue-400: rgb(114, 197, 255);
+  --spectrum-blue-500: rgb(56, 174, 255);
+  --spectrum-blue-600: rgb(20, 115, 230);
+  --spectrum-blue-700: rgb(2, 101, 220);
+  --spectrum-blue-800: rgb(0, 87, 191);
+  --spectrum-blue-900: rgb(0, 78, 166);
+  
+  /* Red Colors */
+  --spectrum-red-400: rgb(255, 89, 89);
+  --spectrum-red-500: rgb(255, 59, 48);
+  --spectrum-red-600: rgb(215, 44, 44);
+  --spectrum-red-700: rgb(200, 39, 39);
+  
+  /* Green Colors */
+  --spectrum-green-400: rgb(114, 224, 106);
+  --spectrum-green-500: rgb(85, 196, 77);
+  --spectrum-green-600: rgb(65, 171, 57);
+  --spectrum-green-700: rgb(55, 142, 48);
+  
+  /* Additional Color Palettes for Badges */
+  --spectrum-orange-600: rgb(246, 88, 0);
+  --spectrum-yellow-600: rgb(223, 179, 0);
+  --spectrum-chartreuse-600: rgb(130, 181, 0);
+  --spectrum-seafoam-600: rgb(0, 143, 93);
+  --spectrum-cyan-600: rgb(0, 143, 166);
+  --spectrum-indigo-600: rgb(88, 106, 216);
+  --spectrum-purple-600: rgb(144, 98, 202);
+  --spectrum-fuchsia-600: rgb(190, 75, 219);
+  --spectrum-magenta-600: rgb(222, 61, 130);
+  
+  /* White */
+  --spectrum-white: rgb(255, 255, 255);
+  --spectrum-transparent-white-200: rgba(255, 255, 255, 0.1);
+  --spectrum-transparent-white-300: rgba(255, 255, 255, 0.2);
+  --spectrum-transparent-white-400: rgba(255, 255, 255, 0.3);
+  
+  /* Accent Colors */
+  --spectrum-accent-color-100: var(--spectrum-blue-100);
+  --spectrum-accent-color-200: var(--spectrum-blue-200);
+  --spectrum-accent-color-300: var(--spectrum-blue-300);
+  --spectrum-accent-color-400: var(--spectrum-blue-400);
+  --spectrum-accent-color-500: var(--spectrum-blue-500);
+  --spectrum-accent-color-600: var(--spectrum-blue-600);
+  --spectrum-accent-color-700: var(--spectrum-blue-700);
+  --spectrum-accent-color-800: var(--spectrum-blue-800);
+  --spectrum-accent-color-900: var(--spectrum-blue-900);
+  
+  /* Semantic Colors */
+  --spectrum-neutral-background-color-default: var(--spectrum-gray-100);
+  --spectrum-neutral-background-color-hover: var(--spectrum-gray-200);
+  --spectrum-neutral-background-color-down: var(--spectrum-gray-300);
+  --spectrum-neutral-background-color-key-focus: var(--spectrum-gray-200);
+  --spectrum-neutral-background-color-selected-default: var(--spectrum-gray-200);
+  --spectrum-neutral-background-color-selected-hover: var(--spectrum-gray-300);
+  --spectrum-neutral-background-color-selected-down: var(--spectrum-gray-400);
+  --spectrum-neutral-background-color-selected-key-focus: var(--spectrum-gray-300);
+  
+  /* Accent Background Colors */
+  --spectrum-accent-background-color-default: var(--spectrum-accent-color-600);
+  --spectrum-accent-background-color-hover: var(--spectrum-accent-color-700);
+  --spectrum-accent-background-color-down: var(--spectrum-accent-color-800);
+  --spectrum-accent-background-color-key-focus: var(--spectrum-accent-color-700);
+  
+  /* Negative Colors */
+  --spectrum-negative-background-color-default: var(--spectrum-red-600);
+  --spectrum-negative-background-color-hover: var(--spectrum-red-700);
+  --spectrum-negative-background-color-down: var(--spectrum-red-700);
+  --spectrum-negative-border-color-default: var(--spectrum-red-500);
+  --spectrum-negative-border-color-hover: var(--spectrum-red-600);
+  --spectrum-negative-border-color-focus: var(--spectrum-red-600);
+  
+  /* Positive Colors */
+  --spectrum-positive-background-color-default: var(--spectrum-green-600);
+  --spectrum-positive-background-color-hover: var(--spectrum-green-700);
+  --spectrum-positive-border-color-default: var(--spectrum-green-500);
+  
+  /* Text Colors */
+  --spectrum-neutral-content-color-default: var(--spectrum-gray-800);
+  --spectrum-neutral-content-color-hover: var(--spectrum-gray-900);
+  --spectrum-neutral-content-color-down: var(--spectrum-gray-900);
+  --spectrum-neutral-content-color-key-focus: var(--spectrum-gray-900);
+  
+  --spectrum-accent-content-color-default: var(--spectrum-accent-color-600);
+  --spectrum-accent-content-color-hover: var(--spectrum-accent-color-700);
+  --spectrum-accent-content-color-down: var(--spectrum-accent-color-800);
+  --spectrum-accent-content-color-key-focus: var(--spectrum-accent-color-700);
+  
+  /* Disabled Colors */
+  --spectrum-disabled-background-color: var(--spectrum-gray-200);
+  --spectrum-disabled-border-color: var(--spectrum-gray-300);
+  --spectrum-disabled-content-color: var(--spectrum-gray-400);
+  
+  /* Border Colors */
+  --spectrum-neutral-border-color-default: var(--spectrum-gray-400);
+  --spectrum-neutral-border-color-hover: var(--spectrum-gray-500);
+  --spectrum-neutral-border-color-down: var(--spectrum-gray-600);
+  --spectrum-neutral-border-color-focus: var(--spectrum-accent-color-600);
+  
+  --spectrum-accent-border-color-default: var(--spectrum-accent-color-600);
+  --spectrum-accent-border-color-hover: var(--spectrum-accent-color-700);
+  --spectrum-accent-border-color-down: var(--spectrum-accent-color-800);
+  --spectrum-accent-border-color-focus: var(--spectrum-accent-color-600);
+  
+  /* Overlay Colors */
+  --spectrum-overlay-background-color: var(--spectrum-gray-50);
+  --spectrum-overlay-border-color: var(--spectrum-gray-300);
+  
+  /* Focus Ring */
+  --spectrum-focus-ring-color: var(--spectrum-accent-color-600);
+  --spectrum-focus-ring-thickness: 2px;
+  --spectrum-focus-ring-gap: 2px;
+  
+  /* Typography */
+  --spectrum-font-family-base: 'Adobe Clean', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --spectrum-font-family-code: 'Source Code Pro', Monaco, monospace;
+  --spectrum-font-family-ar: 'Myriad Arabic', 'Adobe Clean', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --spectrum-font-family-he: 'Myriad Hebrew', 'Adobe Clean', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --spectrum-font-style: normal;
+  --spectrum-font-weight-light: 300;
+  --spectrum-font-weight-regular: 400;
+  --spectrum-font-weight-medium: 500;
+  --spectrum-font-weight-bold: 700;
+  
+  /* Font Sizes */
+  --spectrum-font-size-50: 11px;
+  --spectrum-font-size-75: 12px;
+  --spectrum-font-size-100: 14px;
+  --spectrum-font-size-200: 16px;
+  --spectrum-font-size-300: 18px;
+  --spectrum-font-size-400: 20px;
+  --spectrum-font-size-500: 22px;
+  --spectrum-font-size-600: 25px;
+  --spectrum-font-size-700: 28px;
+  --spectrum-font-size-800: 32px;
+  --spectrum-font-size-900: 36px;
+  --spectrum-font-size-1000: 40px;
+  --spectrum-font-size-1100: 45px;
+  --spectrum-font-size-1200: 50px;
+  --spectrum-font-size-1300: 60px;
+  
+  /* Line Heights */
+  --spectrum-line-height-100: 1.3;
+  --spectrum-line-height-200: 1.5;
+  
+  /* Spacing */
+  --spectrum-spacing-50: 4px;
+  --spectrum-spacing-75: 6px;
+  --spectrum-spacing-100: 8px;
+  --spectrum-spacing-200: 12px;
+  --spectrum-spacing-300: 16px;
+  --spectrum-spacing-400: 24px;
+  --spectrum-spacing-500: 32px;
+  --spectrum-spacing-600: 40px;
+  --spectrum-spacing-700: 48px;
+  --spectrum-spacing-800: 64px;
+  --spectrum-spacing-900: 80px;
+  --spectrum-spacing-1000: 96px;
+  
+  /* Border Radius */
+  --spectrum-corner-radius-75: 3px;
+  --spectrum-corner-radius-100: 4px;
+  --spectrum-corner-radius-200: 8px;
+
+  /* Component Heights */
+  --spectrum-component-height-75: 24px;
+  --spectrum-component-height-100: 32px;
+  --spectrum-component-height-200: 40px;
+  --spectrum-component-height-300: 48px;
+
+  /* Border Width */
+  --spectrum-border-width-200: 2px;
+  --spectrum-corner-radius-300: 12px;
+  --spectrum-corner-radius-400: 16px;
+  
+  /* Border Width */
+  --spectrum-border-width-100: 1px;
+  --spectrum-border-width-200: 2px;
+  --spectrum-border-width-400: 4px;
+  
+  /* Component Heights */
+  --spectrum-component-height-75: 24px;
+  --spectrum-component-height-100: 32px;
+  --spectrum-component-height-200: 40px;
+  --spectrum-component-height-300: 48px;
+  --spectrum-component-height-400: 56px;
+  --spectrum-component-height-500: 64px;
+  --spectrum-component-height-600: 72px;
+  
+  /* Component Widths */
+  --spectrum-component-edge-to-text-75: 8px;
+  --spectrum-component-edge-to-text-100: 12px;
+  --spectrum-component-edge-to-text-200: 16px;
+  --spectrum-component-edge-to-text-300: 20px;
+  
+  /* Field Widths */
+  --spectrum-field-width: 240px;
+  --spectrum-field-width-small: 192px;
+  --spectrum-field-width-large: 288px;
+  
+  /* Checkbox Specific */
+  --spectrum-checkbox-control-size-small: 16px;
+  --spectrum-checkbox-control-size-medium: 20px;
+  --spectrum-checkbox-control-size-large: 24px;
+  --spectrum-checkbox-text-to-control: 8px;
+  
+  /* Radio Button Specific */
+  --spectrum-radio-button-control-size-small: 16px;
+  --spectrum-radio-button-control-size-medium: 18px;
+  --spectrum-radio-button-control-size-large: 20px;
+  --spectrum-radio-button-text-to-control: var(--spectrum-spacing-100);
+  
+  /* Color Area Specific */
+  --spectrum-colorarea-width: 192px;
+  --spectrum-colorarea-height: 192px;
+  --spectrum-colorarea-width-small: 144px;
+  --spectrum-colorarea-height-small: 144px;
+  --spectrum-colorarea-width-large: 240px;
+  --spectrum-colorarea-height-large: 240px;
+  --spectrum-colorarea-handle-size: 14px;
+  --spectrum-colorarea-handle-size-small: 12px;
+  --spectrum-colorarea-handle-size-large: 16px;
+  
+  /* Icon Sizes */
+  --spectrum-icon-size-s: 12px;
+  --spectrum-icon-size-m: 16px;
+  --spectrum-icon-size-l: 20px;
+  --spectrum-icon-size-xl: 24px;
+  --spectrum-icon-size-xxl: 32px;
+  
+  /* Additional Badge Colors */
+  --spectrum-notice-background-color-default: var(--spectrum-orange-600);
+  --spectrum-notice-border-color-default: var(--spectrum-orange-600);
+  --spectrum-info-background-color-default: var(--spectrum-blue-600);
+  --spectrum-info-border-color-default: var(--spectrum-blue-600);
+  --spectrum-seafoam-background-color-default: var(--spectrum-seafoam-600);
+  --spectrum-seafoam-border-color-default: var(--spectrum-seafoam-600);
+  --spectrum-chartreuse-background-color-default: var(--spectrum-chartreuse-600);
+  --spectrum-chartreuse-border-color-default: var(--spectrum-chartreuse-600);
+  --spectrum-yellow-background-color-default: var(--spectrum-yellow-600);
+  --spectrum-yellow-border-color-default: var(--spectrum-yellow-600);
+  --spectrum-magenta-background-color-default: var(--spectrum-magenta-600);
+  --spectrum-magenta-border-color-default: var(--spectrum-magenta-600);
+  --spectrum-fuchsia-background-color-default: var(--spectrum-fuchsia-600);
+  --spectrum-fuchsia-border-color-default: var(--spectrum-fuchsia-600);
+  --spectrum-purple-background-color-default: var(--spectrum-purple-600);
+  --spectrum-purple-border-color-default: var(--spectrum-purple-600);
+  --spectrum-indigo-background-color-default: var(--spectrum-indigo-600);
+  --spectrum-indigo-border-color-default: var(--spectrum-indigo-600);
+  --spectrum-cyan-background-color-default: var(--spectrum-cyan-600);
+  --spectrum-cyan-border-color-default: var(--spectrum-cyan-600);
+  
+  /* Divider Colors */
+  --spectrum-divider-color: var(--spectrum-gray-300);
+  --spectrum-divider-color-light: var(--spectrum-gray-200);
+  --spectrum-divider-color-strong: var(--spectrum-gray-400);
+  
+  /* Shadows */
+  --spectrum-drop-shadow-y: 0 2px 8px rgba(0, 0, 0, 0.15);
+  --spectrum-drop-shadow-blur: 4px;
+  --spectrum-drop-shadow-color: rgba(0, 0, 0, 0.15);
+  
+  /* Background Colors */
+  --spectrum-background-layer-1-color: var(--spectrum-gray-50);
+  --spectrum-background-layer-2-color: var(--spectrum-gray-100);
+  --spectrum-background-base-color: var(--spectrum-gray-50);
+
+  /* Component Edge to Text (for buttons) */
+  --spectrum-component-pill-edge-to-text-75: 11px;
+  --spectrum-component-pill-edge-to-text-100: 15px;
+  --spectrum-component-pill-edge-to-text-200: 19px;
+  --spectrum-component-pill-edge-to-text-300: 23px;
+
+  /* Text to Visual (icon spacing) */
+  --spectrum-text-to-visual-75: 6px;
+  --spectrum-text-to-visual-100: 8px;
+  --spectrum-text-to-visual-200: 8px;
+  --spectrum-text-to-visual-300: 10px;
+
+  /* Focus Indicator */
+  --spectrum-focus-indicator-thickness: 2px;
+  --spectrum-focus-indicator-gap: 2px;
+  --spectrum-focus-indicator-color: var(--spectrum-focus-ring-color);
+
+  /* Workflow Icon Sizes */
+  --spectrum-workflow-icon-size-75: 16px;
+  --spectrum-workflow-icon-size-100: 18px;
+  --spectrum-workflow-icon-size-200: 20px;
+  --spectrum-workflow-icon-size-300: 24px;
+
+  /* Additional Semantic Colors for Better Matching */
+  --spectrum-neutral-subdued-background-color-default: var(--spectrum-gray-100);
+  --spectrum-neutral-subdued-background-color-hover: var(--spectrum-gray-200);
+  --spectrum-neutral-subdued-background-color-down: var(--spectrum-gray-300);
+
+  /* Component Background Colors */
+  --spectrum-component-background-color-default: var(--spectrum-gray-50);
+  --spectrum-component-background-color-hover: var(--spectrum-gray-100);
+
+  /* Additional Border Colors */
+  --spectrum-component-border-color-default: var(--spectrum-gray-300);
+  --spectrum-component-border-color-hover: var(--spectrum-gray-400);
+  --spectrum-component-border-color-focus: var(--spectrum-accent-color-600);
+
+  /* Text Colors for Better Contrast */
+  --spectrum-heading-color: var(--spectrum-gray-900);
+  --spectrum-body-color: var(--spectrum-gray-800);
+  --spectrum-detail-color: var(--spectrum-gray-700);
+}
+
+/* Dark Theme Overrides */
+[data-theme="dark"] {
+  --spectrum-gray-50: rgb(0, 0, 0);
+  --spectrum-gray-75: rgb(16, 16, 16);
+  --spectrum-gray-100: rgb(29, 29, 29);
+  --spectrum-gray-200: rgb(50, 50, 50);
+  --spectrum-gray-300: rgb(70, 70, 70);
+  --spectrum-gray-400: rgb(109, 109, 109);
+  --spectrum-gray-500: rgb(144, 144, 144);
+  --spectrum-gray-600: rgb(177, 177, 177);
+  --spectrum-gray-700: rgb(213, 213, 213);
+  --spectrum-gray-800: rgb(235, 235, 235);
+  --spectrum-gray-900: rgb(255, 255, 255);
+  
+  --spectrum-neutral-content-color-default: var(--spectrum-gray-800);
+  --spectrum-neutral-content-color-hover: var(--spectrum-gray-900);
+  --spectrum-background-layer-1-color: var(--spectrum-gray-100);
+  --spectrum-background-layer-2-color: var(--spectrum-gray-75);
+  --spectrum-background-base-color: var(--spectrum-gray-50);
+  --spectrum-overlay-background-color: var(--spectrum-gray-100);
+  --spectrum-overlay-border-color: var(--spectrum-gray-400);
+} 

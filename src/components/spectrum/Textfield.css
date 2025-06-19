@@ -1,0 +1,203 @@
+.spectrum-textfield {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-width: var(--spectrum-field-width-100);
+}
+
+.spectrum-textfield-label {
+  margin-bottom: var(--spectrum-spacing-75);
+  font-family: var(--spectrum-font-family-base);
+  font-size: var(--spectrum-font-size-75);
+  font-weight: var(--spectrum-font-weight-regular);
+  line-height: var(--spectrum-line-height-100);
+  color: var(--spectrum-text-color-default);
+}
+
+.spectrum-textfield.is-disabled .spectrum-textfield-label {
+  color: var(--spectrum-text-color-disabled);
+}
+
+.spectrum-textfield-input-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.spectrum-textfield-input {
+  width: 100%;
+  min-height: var(--spectrum-component-height-100);
+  padding: var(--spectrum-spacing-75) var(--spectrum-spacing-100);
+  border: var(--spectrum-border-width-100) solid var(--spectrum-border-color-default);
+  border-radius: var(--spectrum-corner-radius-100);
+  background-color: var(--spectrum-background-color-default);
+  font-family: var(--spectrum-font-family-base);
+  font-size: var(--spectrum-font-size-100);
+  line-height: var(--spectrum-line-height-100);
+  color: var(--spectrum-text-color-default);
+  outline: none;
+  transition: all var(--spectrum-animation-duration-100) ease-in-out;
+  resize: none;
+}
+
+.spectrum-textfield-input::placeholder {
+  color: var(--spectrum-text-color-placeholder);
+}
+
+.spectrum-textfield-input:hover {
+  border-color: var(--spectrum-border-color-hover);
+}
+
+.spectrum-textfield.is-focused .spectrum-textfield-input,
+.spectrum-textfield-input:focus {
+  border-color: var(--spectrum-border-color-focus);
+  box-shadow: 0 0 0 1px var(--spectrum-border-color-focus);
+}
+
+.spectrum-textfield.is-invalid .spectrum-textfield-input {
+  border-color: var(--spectrum-border-color-negative);
+}
+
+.spectrum-textfield.is-invalid.is-focused .spectrum-textfield-input,
+.spectrum-textfield.is-invalid .spectrum-textfield-input:focus {
+  border-color: var(--spectrum-border-color-negative);
+  box-shadow: 0 0 0 1px var(--spectrum-border-color-negative);
+}
+
+.spectrum-textfield.is-disabled .spectrum-textfield-input {
+  background-color: var(--spectrum-background-color-disabled);
+  border-color: var(--spectrum-border-color-disabled);
+  color: var(--spectrum-text-color-disabled);
+  cursor: not-allowed;
+}
+
+.spectrum-textfield.is-disabled .spectrum-textfield-input::placeholder {
+  color: var(--spectrum-text-color-disabled);
+}
+
+/* Quiet variant */
+.spectrum-textfield--quiet .spectrum-textfield-input {
+  border-left: none;
+  border-right: none;
+  border-top: none;
+  border-radius: 0;
+  background-color: transparent;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.spectrum-textfield--quiet .spectrum-textfield-input:hover {
+  border-bottom-color: var(--spectrum-border-color-hover);
+}
+
+.spectrum-textfield--quiet.is-focused .spectrum-textfield-input,
+.spectrum-textfield--quiet .spectrum-textfield-input:focus {
+  border-bottom-color: var(--spectrum-border-color-focus);
+  box-shadow: 0 1px 0 0 var(--spectrum-border-color-focus);
+}
+
+.spectrum-textfield--quiet.is-invalid .spectrum-textfield-input {
+  border-bottom-color: var(--spectrum-border-color-negative);
+}
+
+.spectrum-textfield--quiet.is-invalid.is-focused .spectrum-textfield-input,
+.spectrum-textfield--quiet.is-invalid .spectrum-textfield-input:focus {
+  border-bottom-color: var(--spectrum-border-color-negative);
+  box-shadow: 0 1px 0 0 var(--spectrum-border-color-negative);
+}
+
+/* Multiline variant */
+.spectrum-textfield--multiline .spectrum-textfield-input {
+  min-height: calc(var(--spectrum-component-height-100) * 2);
+  resize: vertical;
+}
+
+/* Size variants */
+.spectrum-textfield--size-s .spectrum-textfield-input {
+  min-height: var(--spectrum-component-height-75);
+  padding: var(--spectrum-spacing-50) var(--spectrum-spacing-75);
+  font-size: var(--spectrum-font-size-75);
+}
+
+.spectrum-textfield--size-l .spectrum-textfield-input {
+  min-height: var(--spectrum-component-height-200);
+  padding: var(--spectrum-spacing-100) var(--spectrum-spacing-150);
+  font-size: var(--spectrum-font-size-200);
+}
+
+.spectrum-textfield--size-xl .spectrum-textfield-input {
+  min-height: var(--spectrum-component-height-300);
+  padding: var(--spectrum-spacing-150) var(--spectrum-spacing-200);
+  font-size: var(--spectrum-font-size-300);
+}
+
+/* Help text */
+.spectrum-textfield-helptext {
+  margin-top: var(--spectrum-spacing-75);
+}
+
+.spectrum-helptext {
+  font-family: var(--spectrum-font-family-base);
+  font-size: var(--spectrum-font-size-75);
+  line-height: var(--spectrum-line-height-100);
+  color: var(--spectrum-text-color-neutral);
+}
+
+.spectrum-helptext--negative {
+  color: var(--spectrum-text-color-negative);
+}
+
+/* Validation states */
+.spectrum-textfield.is-valid .spectrum-textfield-input {
+  border-color: var(--spectrum-border-color-positive);
+}
+
+.spectrum-textfield.is-valid.is-focused .spectrum-textfield-input,
+.spectrum-textfield.is-valid .spectrum-textfield-input:focus {
+  border-color: var(--spectrum-border-color-positive);
+  box-shadow: 0 0 0 1px var(--spectrum-border-color-positive);
+}
+
+/* Input with icons (for future enhancement) */
+.spectrum-textfield--has-start-icon .spectrum-textfield-input {
+  padding-left: calc(var(--spectrum-spacing-100) + var(--spectrum-icon-size-100) + var(--spectrum-spacing-75));
+}
+
+.spectrum-textfield--has-end-icon .spectrum-textfield-input {
+  padding-right: calc(var(--spectrum-spacing-100) + var(--spectrum-icon-size-100) + var(--spectrum-spacing-75));
+}
+
+.spectrum-textfield-icon {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: var(--spectrum-icon-size-100);
+  height: var(--spectrum-icon-size-100);
+  fill: var(--spectrum-icon-color-default);
+  pointer-events: none;
+}
+
+.spectrum-textfield-icon--start {
+  left: var(--spectrum-spacing-100);
+}
+
+.spectrum-textfield-icon--end {
+  right: var(--spectrum-spacing-100);
+}
+
+.spectrum-textfield.is-disabled .spectrum-textfield-icon {
+  fill: var(--spectrum-icon-color-disabled);
+}
+
+/* Character count (for future enhancement) */
+.spectrum-textfield-charactercount {
+  margin-top: var(--spectrum-spacing-50);
+  text-align: right;
+  font-family: var(--spectrum-font-family-base);
+  font-size: var(--spectrum-font-size-75);
+  color: var(--spectrum-text-color-neutral);
+}
+
+.spectrum-textfield-charactercount--over-limit {
+  color: var(--spectrum-text-color-negative);
+} 

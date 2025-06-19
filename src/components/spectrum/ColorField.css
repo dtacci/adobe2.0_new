@@ -1,0 +1,130 @@
+.spectrum-colorfield {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  min-width: var(--spectrum-field-width);
+}
+
+.spectrum-colorfield-input-wrapper {
+  position: relative;
+  flex: 1;
+}
+
+.spectrum-colorfield-input {
+  width: 100%;
+  height: var(--spectrum-component-height-100);
+  padding: 0 var(--spectrum-component-edge-to-text-100);
+  border: var(--spectrum-border-width-100) solid var(--spectrum-neutral-border-color-default);
+  border-radius: var(--spectrum-corner-radius-100);
+  background-color: var(--spectrum-neutral-background-color-default);
+  color: var(--spectrum-neutral-content-color-default);
+  font-family: var(--spectrum-font-family-code);
+  font-size: var(--spectrum-font-size-100);
+  line-height: var(--spectrum-line-height-100);
+  transition: all var(--spectrum-animation-duration-100) ease-in-out;
+  outline: none;
+}
+
+.spectrum-colorfield-swatch {
+  width: var(--spectrum-component-height-100);
+  height: var(--spectrum-component-height-100);
+  margin-left: var(--spectrum-spacing-100);
+  border: var(--spectrum-border-width-100) solid var(--spectrum-neutral-border-color-default);
+  border-radius: var(--spectrum-corner-radius-100);
+  flex-shrink: 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.spectrum-colorfield-swatch::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    linear-gradient(45deg, #ccc 25%, transparent 25%), 
+    linear-gradient(-45deg, #ccc 25%, transparent 25%), 
+    linear-gradient(45deg, transparent 75%, #ccc 75%), 
+    linear-gradient(-45deg, transparent 75%, #ccc 75%);
+  background-size: 8px 8px;
+  background-position: 0 0, 0 4px, 4px -4px, -4px 0px;
+  z-index: -1;
+}
+
+/* Hover state */
+.spectrum-colorfield:hover .spectrum-colorfield-input {
+  border-color: var(--spectrum-neutral-border-color-hover);
+}
+
+.spectrum-colorfield:hover .spectrum-colorfield-swatch {
+  border-color: var(--spectrum-neutral-border-color-hover);
+}
+
+/* Focus state */
+.spectrum-colorfield-input:focus {
+  border-color: var(--spectrum-accent-border-color-focus);
+  box-shadow: 0 0 0 1px var(--spectrum-accent-border-color-focus);
+}
+
+/* Invalid state */
+.spectrum-colorfield--invalid .spectrum-colorfield-input {
+  border-color: var(--spectrum-negative-border-color-default);
+}
+
+.spectrum-colorfield--invalid .spectrum-colorfield-input:focus {
+  border-color: var(--spectrum-negative-border-color-focus);
+  box-shadow: 0 0 0 1px var(--spectrum-negative-border-color-focus);
+}
+
+.spectrum-colorfield--invalid .spectrum-colorfield-swatch {
+  border-color: var(--spectrum-negative-border-color-default);
+}
+
+/* Disabled state */
+.spectrum-colorfield--disabled .spectrum-colorfield-input {
+  background-color: var(--spectrum-disabled-background-color);
+  border-color: var(--spectrum-disabled-border-color);
+  color: var(--spectrum-disabled-content-color);
+  cursor: not-allowed;
+}
+
+.spectrum-colorfield--disabled .spectrum-colorfield-swatch {
+  border-color: var(--spectrum-disabled-border-color);
+  opacity: 0.5;
+}
+
+/* Read-only state */
+.spectrum-colorfield--readonly .spectrum-colorfield-input {
+  background-color: var(--spectrum-gray-100);
+  border-color: var(--spectrum-gray-300);
+  cursor: default;
+}
+
+.spectrum-colorfield--readonly .spectrum-colorfield-swatch {
+  border-color: var(--spectrum-gray-300);
+}
+
+/* Size variants */
+.spectrum-colorfield--size-small .spectrum-colorfield-input {
+  height: var(--spectrum-component-height-75);
+  font-size: var(--spectrum-font-size-75);
+  padding: 0 var(--spectrum-component-edge-to-text-75);
+}
+
+.spectrum-colorfield--size-small .spectrum-colorfield-swatch {
+  width: var(--spectrum-component-height-75);
+  height: var(--spectrum-component-height-75);
+}
+
+.spectrum-colorfield--size-large .spectrum-colorfield-input {
+  height: var(--spectrum-component-height-200);
+  font-size: var(--spectrum-font-size-200);
+  padding: 0 var(--spectrum-component-edge-to-text-200);
+}
+
+.spectrum-colorfield--size-large .spectrum-colorfield-swatch {
+  width: var(--spectrum-component-height-200);
+  height: var(--spectrum-component-height-200);
+} 

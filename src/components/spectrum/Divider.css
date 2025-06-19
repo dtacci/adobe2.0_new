@@ -1,0 +1,73 @@
+/* Divider Component Styles */
+.spectrum-divider {
+  border: none;
+  border-block-start: var(--spectrum-divider-thickness) solid;
+  border-color: var(--spectrum-divider-color);
+  margin: 0;
+  inline-size: 100%;
+  block-size: var(--spectrum-divider-thickness);
+}
+
+/* Horizontal Divider */
+.spectrum-divider--horizontal {
+  inline-size: 100%;
+  block-size: var(--spectrum-divider-thickness);
+  border-block-start: var(--spectrum-divider-thickness) solid;
+  border-inline-start: none;
+}
+
+/* Vertical Divider */
+.spectrum-divider--vertical {
+  inline-size: var(--spectrum-divider-thickness);
+  block-size: 100%;
+  border-block-start: none;
+  border-inline-start: var(--spectrum-divider-thickness) solid;
+}
+
+/* Sizes */
+.spectrum-divider--size-s {
+  --spectrum-divider-thickness: var(--spectrum-border-width-100);
+}
+
+.spectrum-divider--size-m {
+  --spectrum-divider-thickness: var(--spectrum-border-width-100);
+}
+
+.spectrum-divider--size-l {
+  --spectrum-divider-thickness: var(--spectrum-border-width-200);
+}
+
+/* Variants */
+.spectrum-divider--small {
+  --spectrum-divider-color: var(--spectrum-gray-300);
+}
+
+.spectrum-divider--medium {
+  --spectrum-divider-color: var(--spectrum-gray-400);
+}
+
+.spectrum-divider--large {
+  --spectrum-divider-color: var(--spectrum-gray-500);
+}
+
+/* Static Colors */
+.spectrum-divider--static-white {
+  --spectrum-divider-color: rgba(255, 255, 255, 0.2);
+}
+
+.spectrum-divider--static-black {
+  --spectrum-divider-color: rgba(0, 0, 0, 0.2);
+}
+
+/* Dark theme adjustments */
+[data-theme="dark"] .spectrum-divider--small {
+  --spectrum-divider-color: var(--spectrum-gray-400);
+}
+
+[data-theme="dark"] .spectrum-divider--medium {
+  --spectrum-divider-color: var(--spectrum-gray-500);
+}
+
+[data-theme="dark"] .spectrum-divider--large {
+  --spectrum-divider-color: var(--spectrum-gray-600);
+} 
