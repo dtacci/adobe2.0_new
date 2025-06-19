@@ -60,7 +60,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 40px;
+  height: 48px;
   padding: 0 15px;
   background-color: var(--storybook-bg);
   border-bottom: 1px solid var(--storybook-border);
@@ -180,7 +180,7 @@ body {
 /* App Content */
 .app-content {
   display: flex;
-  height: calc(100vh - 40px);
+  height: calc(100vh - 48px);
   overflow: hidden;
 }
 
@@ -498,6 +498,12 @@ body {
   }
   
   .header-controls {
+    display: flex;
+    gap: 8px;
+  }
+  
+  /* Hide theme and scale controls on mobile, but keep avatar */
+  .header-controls .control-group:not(.avatar-control) {
     display: none;
   }
 }
@@ -533,4 +539,9 @@ body {
   border-radius: 6px;
   color: #c53030;
   font-size: 14px;
+}
+
+/* Header Avatar specific styles */
+.header-controls .spectrum-Avatar {
+  margin-left: 8px;
 } 
