@@ -43,3 +43,6 @@ pids
 ehthumbs.db
 Thumbs.db 
 .vercel
+
+# Buggy/test files
+src/components/spectrum/BuggyComponent.css

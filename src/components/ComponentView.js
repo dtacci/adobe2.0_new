@@ -93,27 +93,29 @@ const ComponentView = ({ componentName, theme, scale }) => {
               size={props.size || 'medium'}
               disabled={props.isDisabled || false}
               src={props.src || 'https://i.pravatar.cc/150?img=1'}
-              alt="John Doe"
+              alt={props.alt || 'John Doe'}
+              initials={props.initials}
             />
-            <Avatar
-              size={props.size || 'medium'}
-              disabled={props.isDisabled || false}
-              initials="JD"
-              alt="Jane Doe"
-            />
-            <Avatar
-              size={props.size || 'medium'}
-              disabled={props.isDisabled || false}
-              alt="Alice Smith"
-            />
+            {!props.src && (
+              <Avatar
+                size={props.size || 'medium'}
+                disabled={props.isDisabled || false}
+                initials={props.initials || 'JD'}
+                alt="Jane Doe"
+              />
+            )}
           </div>
         );
       case 'Breadcrumbs':
         return (
-          <Breadcrumbs size={props.size || 'medium'} multiline={props.multiline || false}>
+          <Breadcrumbs 
+            size={props.size || 'medium'} 
+            multiline={props.multiline || false}
+            showRoot={props.showRoot !== false}
+          >
             <Breadcrumbs.Item href="#" disabled={props.isDisabled || false}>Home</Breadcrumbs.Item>
-            <Breadcrumbs.Item href="#">Category</Breadcrumbs.Item>
-            <Breadcrumbs.Item href="#">Subcategory</Breadcrumbs.Item>
+            <Breadcrumbs.Item href="#" disabled={props.isDisabled || false}>Category</Breadcrumbs.Item>
+            <Breadcrumbs.Item href="#" disabled={props.isDisabled || false}>Subcategory</Breadcrumbs.Item>
             <Breadcrumbs.Item>Current Page</Breadcrumbs.Item>
           </Breadcrumbs>
         );
@@ -179,10 +181,11 @@ const ComponentView = ({ componentName, theme, scale }) => {
       case 'ActionButton':
         return (
           <ActionButton
-            variant={props.variant || 'primary'}
+            variant={props.variant || 'default'}
             size={props.size || 'medium'}
-            isQuiet={props.isQuiet || false}
-            isDisabled={props.isDisabled || false}
+            quiet={props.isQuiet || false}
+            disabled={props.isDisabled || false}
+            selected={props.selected || false}
           >
             {props.children || 'Action'}
           </ActionButton>
@@ -340,7 +343,7 @@ const ComponentView = ({ componentName, theme, scale }) => {
         return (
           <Badge
             variant={props.variant || 'neutral'}
-            size={props.size || 'medium'}
+            size={props.size || 'm'}
           >
             {props.children || 'Badge'}
           </Badge>
@@ -354,6 +357,113 @@ const ComponentView = ({ componentName, theme, scale }) => {
             isIndeterminate={props.isIndeterminate || false}
             showValueLabel={props.showValueLabel !== false}
           />
+        );
+      case 'ActionBar':
+      case 'Action Bar':
+        return (
+          <div style={{ 
+            padding: '20px', 
+            border: '1px dashed #ccc',
+            borderRadius: '4px',
+            textAlign: 'center', 
+            color: 'var(--storybook-text-muted)',
+            fontSize: '16px'
+          }}>
+            <h3>Action Bar Component</h3>
+            <p>This component will contain action buttons in a horizontal layout.</p>
+            <p style={{ fontSize: '14px' }}>
+              Controls will be added once the component is implemented.
+            </p>
+          </div>
+        );
+      case 'ActionGroup':
+      case 'Action Group':
+        return (
+          <div style={{ 
+            padding: '20px', 
+            border: '1px dashed #ccc',
+            borderRadius: '4px',
+            textAlign: 'center', 
+            color: 'var(--storybook-text-muted)',
+            fontSize: '16px'
+          }}>
+            <h3>Action Group Component</h3>
+            <p>This component will group related action buttons together.</p>
+            <p style={{ fontSize: '14px' }}>
+              Controls will be added once the component is implemented.
+            </p>
+          </div>
+        );
+      case 'Actionmenu':
+      case 'Action menu':
+        return (
+          <div style={{ 
+            padding: '20px', 
+            border: '1px dashed #ccc',
+            borderRadius: '4px',
+            textAlign: 'center', 
+            color: 'var(--storybook-text-muted)',
+            fontSize: '16px'
+          }}>
+            <h3>Action Menu Component</h3>
+            <p>This component will provide a menu of actions triggered by a button.</p>
+            <p style={{ fontSize: '14px' }}>
+              Controls will be added once the component is implemented.
+            </p>
+          </div>
+        );
+      case 'AlertBanner':
+      case 'Alert Banner':
+        return (
+          <div style={{ 
+            padding: '20px', 
+            border: '1px dashed #ccc',
+            borderRadius: '4px',
+            textAlign: 'center', 
+            color: 'var(--storybook-text-muted)',
+            fontSize: '16px'
+          }}>
+            <h3>Alert Banner Component</h3>
+            <p>This component will display important alerts and notifications.</p>
+            <p style={{ fontSize: '14px' }}>
+              Controls will be added once the component is implemented.
+            </p>
+          </div>
+        );
+      case 'AlertDialog':
+      case 'Alert Dialog':
+        return (
+          <div style={{ 
+            padding: '20px', 
+            border: '1px dashed #ccc',
+            borderRadius: '4px',
+            textAlign: 'center', 
+            color: 'var(--storybook-text-muted)',
+            fontSize: '16px'
+          }}>
+            <h3>Alert Dialog Component</h3>
+            <p>This component will display modal alert dialogs for critical information.</p>
+            <p style={{ fontSize: '14px' }}>
+              Controls will be added once the component is implemented.
+            </p>
+          </div>
+        );
+      case 'Asset':
+        return (
+          <div style={{ 
+            padding: '20px', 
+            border: '1px dashed #ccc',
+            borderRadius: '4px',
+            textAlign: 'center', 
+            color: 'var(--storybook-text-muted)',
+            fontSize: '16px'
+          }}>
+            <h3>Asset Component</h3>
+            <p>This component will display and manage digital assets.</p>
+            <p style={{ fontSize: '14px' }}>
+              Controls will be added once the component is implemented.
+            </p>
+          </div>
         );
       default:
         return (
@@ -378,8 +488,172 @@ const ComponentView = ({ componentName, theme, scale }) => {
 
     const controls = [];
 
-    // Common controls for most components
-    if (['Button', 'ActionButton'].includes(componentName)) {
+    // Accordion controls
+    if (componentName === 'Accordion') {
+      controls.push(
+        <div key="allowMultiple" className="control-item">
+          <label className="control-label">
+            <input 
+              className="control-checkbox"
+              type="checkbox" 
+              checked={props.allowMultiple || false} 
+              onChange={(e) => updateProp('allowMultiple', e.target.checked)}
+            />
+            Allow Multiple
+          </label>
+        </div>,
+        <div key="isDisabled" className="control-item">
+          <label className="control-label">
+            <input 
+              className="control-checkbox"
+              type="checkbox" 
+              checked={props.isDisabled || false} 
+              onChange={(e) => updateProp('isDisabled', e.target.checked)}
+            />
+            Disabled
+          </label>
+        </div>
+      );
+    }
+
+    // ActionButton controls
+    if (componentName === 'ActionButton') {
+      controls.push(
+        <div key="variant" className="control-item">
+          <label className="control-label">Variant</label>
+          <select 
+            className="control-input"
+            value={props.variant || 'default'} 
+            onChange={(e) => updateProp('variant', e.target.value)}
+          >
+            <option value="default">Default</option>
+            <option value="primary">Primary</option>
+            <option value="secondary">Secondary</option>
+            <option value="accent">Accent</option>
+            <option value="negative">Negative</option>
+            <option value="over-background">Over Background</option>
+          </select>
+        </div>,
+        <div key="size" className="control-item">
+          <label className="control-label">Size</label>
+          <select 
+            className="control-input"
+            value={props.size || 'medium'} 
+            onChange={(e) => updateProp('size', e.target.value)}
+          >
+            <option value="small">Small</option>
+            <option value="medium">Medium</option>
+            <option value="large">Large</option>
+          </select>
+        </div>,
+        <div key="children" className="control-item">
+          <label className="control-label">Text</label>
+          <input 
+            className="control-input"
+            type="text" 
+            value={props.children || 'Action'} 
+            onChange={(e) => updateProp('children', e.target.value)}
+          />
+        </div>,
+        <div key="isQuiet" className="control-item">
+          <label className="control-label">
+            <input 
+              className="control-checkbox"
+              type="checkbox" 
+              checked={props.isQuiet || false} 
+              onChange={(e) => updateProp('isQuiet', e.target.checked)}
+            />
+            Quiet
+          </label>
+        </div>,
+        <div key="selected" className="control-item">
+          <label className="control-label">
+            <input 
+              className="control-checkbox"
+              type="checkbox" 
+              checked={props.selected || false} 
+              onChange={(e) => updateProp('selected', e.target.checked)}
+            />
+            Selected
+          </label>
+        </div>,
+        <div key="isDisabled" className="control-item">
+          <label className="control-label">
+            <input 
+              className="control-checkbox"
+              type="checkbox" 
+              checked={props.isDisabled || false} 
+              onChange={(e) => updateProp('isDisabled', e.target.checked)}
+            />
+            Disabled
+          </label>
+        </div>
+      );
+    }
+
+    // Avatar controls
+    if (componentName === 'Avatar') {
+      controls.push(
+        <div key="size" className="control-item">
+          <label className="control-label">Size</label>
+          <select 
+            className="control-input"
+            value={props.size || 'medium'} 
+            onChange={(e) => updateProp('size', e.target.value)}
+          >
+            <option value="small">Small</option>
+            <option value="medium">Medium</option>
+            <option value="large">Large</option>
+            <option value="extra-large">Extra Large</option>
+          </select>
+        </div>,
+        <div key="src" className="control-item">
+          <label className="control-label">Image URL</label>
+          <input 
+            className="control-input"
+            type="text" 
+            value={props.src || 'https://i.pravatar.cc/150?img=1'} 
+            onChange={(e) => updateProp('src', e.target.value)}
+            placeholder="https://example.com/avatar.jpg"
+          />
+        </div>,
+        <div key="initials" className="control-item">
+          <label className="control-label">Initials</label>
+          <input 
+            className="control-input"
+            type="text" 
+            value={props.initials || ''} 
+            onChange={(e) => updateProp('initials', e.target.value)}
+            placeholder="JD"
+            maxLength="2"
+          />
+        </div>,
+        <div key="alt" className="control-item">
+          <label className="control-label">Alt Text</label>
+          <input 
+            className="control-input"
+            type="text" 
+            value={props.alt || 'John Doe'} 
+            onChange={(e) => updateProp('alt', e.target.value)}
+            placeholder="John Doe"
+          />
+        </div>,
+        <div key="isDisabled" className="control-item">
+          <label className="control-label">
+            <input 
+              className="control-checkbox"
+              type="checkbox" 
+              checked={props.isDisabled || false} 
+              onChange={(e) => updateProp('isDisabled', e.target.checked)}
+            />
+            Disabled
+          </label>
+        </div>
+      );
+    }
+
+    // Button controls
+    if (componentName === 'Button') {
       controls.push(
         <div key="variant" className="control-item">
           <label className="control-label">Variant</label>
@@ -412,7 +686,7 @@ const ComponentView = ({ componentName, theme, scale }) => {
           <input 
             className="control-input"
             type="text" 
-            value={props.children || (componentName === 'Button' ? 'Button' : 'Action')} 
+            value={props.children || 'Button'} 
             onChange={(e) => updateProp('children', e.target.value)}
           />
         </div>,
@@ -441,7 +715,172 @@ const ComponentView = ({ componentName, theme, scale }) => {
       );
     }
 
-    // Add component-specific controls
+    // Badge controls
+    if (componentName === 'Badge') {
+      controls.push(
+        <div key="variant" className="control-item">
+          <label className="control-label">Variant</label>
+          <select 
+            className="control-input"
+            value={props.variant || 'neutral'} 
+            onChange={(e) => updateProp('variant', e.target.value)}
+          >
+            <option value="neutral">Neutral</option>
+            <option value="accent">Accent</option>
+            <option value="informative">Informative</option>
+            <option value="positive">Positive</option>
+            <option value="notice">Notice</option>
+            <option value="negative">Negative</option>
+          </select>
+        </div>,
+        <div key="size" className="control-item">
+          <label className="control-label">Size</label>
+          <select 
+            className="control-input"
+            value={props.size || 'm'} 
+            onChange={(e) => updateProp('size', e.target.value)}
+          >
+            <option value="s">Small</option>
+            <option value="m">Medium</option>
+            <option value="l">Large</option>
+          </select>
+        </div>,
+        <div key="children" className="control-item">
+          <label className="control-label">Text</label>
+          <input 
+            className="control-input"
+            type="text" 
+            value={props.children || 'Badge'} 
+            onChange={(e) => updateProp('children', e.target.value)}
+          />
+        </div>
+      );
+    }
+
+    // Breadcrumbs controls
+    if (componentName === 'Breadcrumbs') {
+      controls.push(
+        <div key="size" className="control-item">
+          <label className="control-label">Size</label>
+          <select 
+            className="control-input"
+            value={props.size || 'medium'} 
+            onChange={(e) => updateProp('size', e.target.value)}
+          >
+            <option value="small">Small</option>
+            <option value="medium">Medium</option>
+            <option value="large">Large</option>
+          </select>
+        </div>,
+        <div key="multiline" className="control-item">
+          <label className="control-label">
+            <input 
+              className="control-checkbox"
+              type="checkbox" 
+              checked={props.multiline || false} 
+              onChange={(e) => updateProp('multiline', e.target.checked)}
+            />
+            Multiline
+          </label>
+        </div>,
+        <div key="showRoot" className="control-item">
+          <label className="control-label">
+            <input 
+              className="control-checkbox"
+              type="checkbox" 
+              checked={props.showRoot !== false} 
+              onChange={(e) => updateProp('showRoot', e.target.checked)}
+            />
+            Show Root
+          </label>
+        </div>,
+        <div key="isDisabled" className="control-item">
+          <label className="control-label">
+            <input 
+              className="control-checkbox"
+              type="checkbox" 
+              checked={props.isDisabled || false} 
+              onChange={(e) => updateProp('isDisabled', e.target.checked)}
+            />
+            Disabled
+          </label>
+        </div>
+      );
+    }
+
+    // Action Bar controls (placeholder)
+    if (componentName === 'Action Bar') {
+      controls.push(
+        <div key="placeholder" className="control-item">
+          <label className="control-label">Placeholder Controls</label>
+          <p style={{ fontSize: '12px', color: 'var(--storybook-text-muted)', margin: 0 }}>
+            Controls will be added when the component is implemented.
+          </p>
+        </div>
+      );
+    }
+
+    // Action Group controls (placeholder)
+    if (componentName === 'Action Group') {
+      controls.push(
+        <div key="placeholder" className="control-item">
+          <label className="control-label">Placeholder Controls</label>
+          <p style={{ fontSize: '12px', color: 'var(--storybook-text-muted)', margin: 0 }}>
+            Controls will be added when the component is implemented.
+          </p>
+        </div>
+      );
+    }
+
+    // Action menu controls (placeholder)
+    if (componentName === 'Action menu') {
+      controls.push(
+        <div key="placeholder" className="control-item">
+          <label className="control-label">Placeholder Controls</label>
+          <p style={{ fontSize: '12px', color: 'var(--storybook-text-muted)', margin: 0 }}>
+            Controls will be added when the component is implemented.
+          </p>
+        </div>
+      );
+    }
+
+    // Alert Banner controls (placeholder)
+    if (componentName === 'Alert Banner') {
+      controls.push(
+        <div key="placeholder" className="control-item">
+          <label className="control-label">Placeholder Controls</label>
+          <p style={{ fontSize: '12px', color: 'var(--storybook-text-muted)', margin: 0 }}>
+            Controls will be added when the component is implemented.
+          </p>
+        </div>
+      );
+    }
+
+    // Alert Dialog controls (placeholder)
+    if (componentName === 'Alert Dialog') {
+      controls.push(
+        <div key="placeholder" className="control-item">
+          <label className="control-label">Placeholder Controls</label>
+          <p style={{ fontSize: '12px', color: 'var(--storybook-text-muted)', margin: 0 }}>
+            Controls will be added when the component is implemented.
+          </p>
+        </div>
+      );
+    }
+
+    // Asset controls (placeholder)
+    if (componentName === 'Asset') {
+      controls.push(
+        <div key="placeholder" className="control-item">
+          <label className="control-label">Placeholder Controls</label>
+          <p style={{ fontSize: '12px', color: 'var(--storybook-text-muted)', margin: 0 }}>
+            Controls will be added when the component is implemented.
+          </p>
+        </div>
+      );
+    }
+
+    // Checkbox controls
     if (componentName === 'Checkbox') {
       controls.push(
         <div key="children" className="control-item">
@@ -474,11 +913,42 @@ const ComponentView = ({ componentName, theme, scale }) => {
             />
             Indeterminate
           </label>
+        </div>,
+        <div key="isEmphasized" className="control-item">
+          <label className="control-label">
+            <input 
+              className="control-checkbox"
+              type="checkbox" 
+              checked={props.isEmphasized || false} 
+              onChange={(e) => updateProp('isEmphasized', e.target.checked)}
+            />
+            Emphasized
+          </label>
+        </div>,
+        <div key="isInvalid" className="control-item">
+          <label className="control-label">
+            <input 
+              className="control-checkbox"
+              type="checkbox" 
+              checked={props.isInvalid || false} 
+              onChange={(e) => updateProp('isInvalid', e.target.checked)}
+            />
+            Invalid
+          </label>
+        </div>,
+        <div key="isDisabled" className="control-item">
+          <label className="control-label">
+            <input 
+              className="control-checkbox"
+              type="checkbox" 
+              checked={props.isDisabled || false} 
+              onChange={(e) => updateProp('isDisabled', e.target.checked)}
+            />
+            Disabled
+          </label>
         </div>
       );
     }
-
-    // Add more component-specific controls as needed...
 
     return controls;
   };
