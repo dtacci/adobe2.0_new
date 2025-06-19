@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route, Navigate, useParams } from 'rea
 import Sidebar from './components/Sidebar';
 import ComponentView from './components/ComponentView';
 import HomePage from './pages/HomePage';
+import Avatar from './components/spectrum/Avatar';
 import './styles/spectrum-tokens.css';
 import './styles/App.css';
 
@@ -174,6 +175,16 @@ function App() {
                 <option value="medium">Medium</option>
                 <option value="large">Large</option>
               </select>
+            </div>
+            
+            <div className="control-group avatar-control">
+              <span className="control-label">User:</span>
+              <Avatar 
+                initials="DT"
+                size="medium"
+                alt="User Avatar"
+                className="header-avatar"
+              />
             </div>
           </div>
         </header>
