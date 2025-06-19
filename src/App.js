@@ -139,7 +139,7 @@ function App() {
             </button>
             <a href="/" className="app-title">
               <AdobeLogo />
-              Spectrum Components
+              Spectrum Design System
             </a>
             <div className="search-container">
               <input 
