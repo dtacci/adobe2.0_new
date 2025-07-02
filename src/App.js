@@ -3,7 +3,6 @@ import { BrowserRouter as Router, Routes, Route, Navigate, useParams } from 'rea
 import Sidebar from './components/Sidebar';
 import ComponentView from './components/ComponentView';
 import HomePage from './pages/HomePage';
-import Avatar from './components/spectrum/Avatar';
 import './styles/spectrum-tokens.css';
 import './styles/App.css';
 
@@ -142,14 +141,14 @@ function App() {
               <AdobeLogo />
               Spectrum Design System
             </a>
-            <div className="search-container">
+            {/* <div className="search-container">
               <input 
                 type="text"
                 className="search-input"
                 placeholder="Search components..."
                 aria-label="Search components"
               />
-            </div>
+            </div> */}
           </div>
           
           <div className="header-controls">
@@ -177,7 +176,7 @@ function App() {
               </select>
             </div>
             
-            <div className="control-group avatar-control">
+            {/* <div className="control-group avatar-control">
               <span className="control-label">User:</span>
               <Avatar 
                 initials="DT"
@@ -185,7 +184,7 @@ function App() {
                 alt="User Avatar"
                 className="header-avatar"
               />
-            </div>
+            </div> */}
           </div>
         </header>
 
