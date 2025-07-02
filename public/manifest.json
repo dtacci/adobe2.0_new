@@ -1,0 +1,27 @@
+{
+  "short_name": "Spectrum",
+  "name": "Adobe Spectrum Design System",
+  "description": "A design system that provides components and tools to help product teams work more efficiently and create more cohesive Adobe applications",
+  "theme_color": "#fa0f00",
+  "background_color": "#ffffff",
+  "display": "standalone",
+  "start_url": "/",
+  "scope": "/",
+  "icons": [
+    {
+      "src": "favicon.ico",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "logo192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "logo512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ]
+}

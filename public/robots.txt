@@ -1,0 +1,14 @@
+# robots.txt for Adobe Spectrum Design System
+# This file allows search engines to discover and index our design system components
+
+User-agent: *
+Allow: /
+
+# Component pages are important for discoverability
+Allow: /component/
+
+# Sitemap location
+Sitemap: https://your-domain.example.com/sitemap.xml
+
+# Adobe Spectrum Design System - Component Library
+# Last updated: July 2, 2025
